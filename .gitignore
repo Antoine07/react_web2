@@ -6,3 +6,10 @@ dist/
 package-lock.json
 package.json
 .env
+
+.github/
+
+Exercices/props
+Exercices/state
+Exercices/useEffect
+Exercices/useReducer

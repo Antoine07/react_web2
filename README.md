@@ -1,20 +1,33 @@
 # Programme React
 
-## Programme WEB 2
+# Plan de cours 
+
+## Installation pour commencer
+
+1. Tous les modèles sont dans le dossier `models`
+
+1. Organisation pour votre travail
+
+* Créez un dossier COURS_REACT sur votre bureau.
+* Ouvrez ce dossier avec vscode.
+* Créez un sous dossier introduction
+* Créez un autre sous dossier Examples.
+
+---
+
+## Le cours React
 
 - [Introduction](https://antoine07.github.io/react_web2/001_introduction.html)
-
 - [Props](https://antoine07.github.io/react_web2/002_props.html)
-
 - [States](https://antoine07.github.io/react_web2/003_state.html)
+- [useEffect](https://antoine07.github.io/react_web2/005_useEffect.html)
 
-- Jour 1 & 2
+Dans un projet moderne on utilisera `vite`
+
+- [vite](https://antoine07.github.io/react_web2/vite.html)
 
 
-- Jour 3, 4, 5, 6
-
-
-## Pratique
+## Pratique pour le déploiement du cours 
 
 ```bash
 for f in *.html; do pandoc "$f" -o "pdf/${f%.html}.pdf" --pdf-engine=weasyprint; done
@@ -27,7 +40,9 @@ done
 
 ```
 
-Pour créer des slides 
+### Pour créer des slides 
+
+En haut de chaque `markdown`
 
 ```md
 ---

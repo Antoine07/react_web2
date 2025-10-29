@@ -13,6 +13,10 @@ Tout est fluide, cohérent et directement exploitable.
 
 # **Les Props et la Composition dans React**
 
+Pour revenir à la page d'accueil
+
+[Plan du cours](https://antoine07.github.io/react_web2/#2)
+
 ---
 
 ## 1. Introduction
@@ -305,3 +309,12 @@ Créer trois composants :
 En React, on **compose les composants** comme des briques indépendantes.
 Les **props** permettent de transmettre des données,
 et `props.children` permet d'insérer du contenu dynamique dans un composant.
+
+
+---
+
+## Merci d'avoir écouter cette première partie
+
+Pour revenir à la page d'accueil
+
+[Plan du cours](https://antoine07.github.io/react_web2/#2)

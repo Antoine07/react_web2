@@ -19,6 +19,10 @@ class: lead
 
 # **State dans React**
 
+Pour revenir à la page d'accueil
+
+[Plan du cours](https://antoine07.github.io/react_web2/#2)
+
 ---
 
 ## 1. Introduction
@@ -312,3 +316,11 @@ setNumbers([...numbers, 4]);
 Une "immutable update" = créer une **nouvelle copie modifiée**
 au lieu de modifier directement la valeur d'origine.
 Cela permet à React de détecter le changement et de **re-render correctement** le composant.
+
+---
+
+## Merci d'avoir écouter cette première partie
+
+Pour revenir à la page d'accueil
+
+[Plan du cours](https://antoine07.github.io/react_web2/#2)
