@@ -78,9 +78,11 @@ function Counter() {
 
 ## 3. Pourquoi c'est utile ?
 
-* On centralise la logique dans une **fonction pure** (`reducer`).
+* On centralise la logique dans une **fonction pure(*)** (`reducer`)
 * On facilite la maintenance d'applications plus grandes.
 * On garde une approche similaire à Redux, mais **sans dépendance externe**.
+
+(*) Une fonction pure est une fonction qui, pour les mêmes entrées, retourne toujours le même résultat sans modifier de données externes (pas d’effets de bord).
 
 ---
 
