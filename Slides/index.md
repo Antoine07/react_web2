@@ -11,7 +11,7 @@
 * Créez un dossier COURS_REACT sur votre bureau.
 * Ouvrez ce dossier avec vscode.
 * Créez un sous dossier introduction
-* Créez un autre sous dossier Examples.
+* etc
 
 ---
 
