@@ -34,9 +34,7 @@ const [state, dispatch] = React.useReducer(reducer, initialState);
 
 ---
 
-## 2. Exemple minimal
-
-Ici, on gère un compteur, comme avec `useState`, mais via `useReducer`.
+## 2. Exemple minimal Gestion d'un compteur
 
 ```jsx
 function reducer(state, action) {
