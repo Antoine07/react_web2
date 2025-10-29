@@ -9,6 +9,7 @@ package.json
 
 .github/
 
+Exercices/introduction
 Exercices/props
 Exercices/state
 Exercices/useEffect

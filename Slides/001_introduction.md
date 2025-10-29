@@ -46,8 +46,8 @@ document.body.appendChild(el);
 
 ### React apporte la solution optimale :
 
-* une **approche déclarative** : on décrit l'état final de l'interface sous forme de composant `<App/>` par exemple.
-* un **Virtual DOM** : une représentation virtuelle du DOM réel pour rendre les mises à jour efficaces (très technique mais qui optimise le rendu);
+* une **approche déclarative** : on décrit l'état final de l'interface sous forme de composant `<App/>`.
+* un **Virtual DOM** : une représentation virtuelle du DOM réel pour rendre les mises à jour efficaces;
 * une structure **modulaire** : les composants.
 
 ---
@@ -118,7 +118,7 @@ Plugin officiel
 
 ### Go Live
 
-Ouvrez votre fichier index_01.html dans vscode et cliquez sur le bouton en bas à gauche de l'éditeur. Vous verrez alors le rendu de votre premier code React dans votre navigateur.
+Ouvrez votre fichier `index.html` dans `vscode` et cliquez sur le bouton en bas à gauche de l'éditeur. Vous verrez alors le rendu de votre premier code React dans votre navigateur.
 
 ![go live](./images/icone_goLive.png)
 
@@ -156,7 +156,7 @@ mais en mémoire seulement, jusqu'à ce que `root.render()` soit exécuté.
 
 ---
 
-### 🧩  **React.createElement() et le Virtual DOM**
+###  **React.createElement() et le Virtual DOM**
 
 **But :** décrire une interface **sans manipuler directement le DOM.**
 
@@ -180,6 +180,14 @@ Il crée **un objet JavaScript** qui *décrit* cette balise :
 ---
 
 **C'est le "Virtual DOM"** : une copie en mémoire du DOM réel.
+
+---
+
+### Résumé sur les paramètres de React.createElement 
+
+```txt
+React.createElement(type, props, children);
+```
 
 ---
 
@@ -209,7 +217,8 @@ root.render(
 <h1 class="title">Hello!</h1>
 ```
 
-🧩 **Avantage :** rendu optimisé, plus rapide, code prévisible et plus facile à maintenir.
+
+ **Avantage :** rendu optimisé, plus rapide, code prévisible et plus facile à maintenir.
 
 
 ---
@@ -331,12 +340,9 @@ Modifiez du fichier `index.html` pour prendre en compte Babel et donc interprét
 
 ---
 
-## **Exercice 2**
+## **Exercice 3**
 
-1. Créer un composant `ProductCard` (avec image, name, price) **en deux versions** :
-
-   * avec JSX et Babel.
-
+1. Créer un composant `ProductCard` (avec image, name, price) avec JSX et Babel.
 2. Comparer la lisibilité des deux approches avec le précédent exercice sans JSX.
 
 ---
@@ -493,7 +499,7 @@ const safe = DOMPurify.sanitize(unsafeHtml);
 
 ---
 
-## 🧩 **Exercice 1 — Affichage la liste d'étudiants suivantes**
+## **4. Exercice  — Affichage la liste d'étudiants suivantes**
 
 Affichez une liste dans le DOM, inspirez-vous de l'exemple ci-après pour l'utilisation d'un map.
 
@@ -513,7 +519,7 @@ array.map((item, index) => {
 
 ---
 
-## **Exercice 2 — Calcul de moyenne des étudiants suivants**
+## **5. Exercice — Calcul de moyenne des étudiants suivants**
 
 Dans un nouveau fichier calculez la moyenne dans une page Web en React avec JSX.
 

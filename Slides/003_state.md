@@ -58,7 +58,7 @@ Ils ont été introduits pour remplacer les anciens **composants de classe** et 
 
 ```jsx
 useState()   // gère un état local
-useEffect()  // exécute un effet (ex: appel API)
+useEffect()  // exécute un effet (ex: appel API) ou le verra plus loin
 ```
 
 ---

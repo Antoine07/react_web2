@@ -26,11 +26,15 @@
 
 Dans un projet moderne on utilisera `vite`
 
-- [vite](https://antoine07.github.io/react_web2/vite.html)
+- [vite](https://antoine07.github.io/react_web2/007_vite.html)
+
+- [formulaire](https://antoine07.github.io/react_web2/008_form.html)
 
 ---
 
-### Un mini projet synthèse du cours que nous avons vu
+### Installer nvm
+
+[installation nvm](../docs/000_install.html)
 
 
 

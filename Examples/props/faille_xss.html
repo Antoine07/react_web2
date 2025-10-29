@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calcul de moyenne – React</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+     
+    </style>
+  </head>
+  <body>
+    <h1>Props</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+     
+      function App(props){
+
+        //props.name = "Bob"
+
+        return (
+          <div>
+            <h3>{props.name}</h3>
+            <p>{props.role}</p>
+            <p>Age: {props.age}</p>
+            <User name={props.name} age={props.age} />
+          </div>
+        )
+      }
+
+      function User({name, age}){
+        name = name.toUpperCase(); // mauvaise pratique de modifier une prop
+        return (
+          <div>
+            <h3>{name}</h3>
+            <p>Age: {age}</p>
+          </div>
+        )
+      }
+      
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App name="Alan" role="Manager" age="45" />);
+    </script>
+  </body>
+</html>

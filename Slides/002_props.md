@@ -192,8 +192,6 @@ Si une donnée doit changer :
 
 ## 7. Exercice – `ProductCard`
 
-*Attention sur deux pages*
-
 1. Définissez un composant `ProductCard` (`name`, `price`, `image`).
    Exemple d'image :
 
@@ -287,7 +285,7 @@ function App() {
 
 ---
 
-### Exercice – Composition
+### 8. Exercice – Composition
 
 Créer trois composants :
 
