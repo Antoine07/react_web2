@@ -242,8 +242,8 @@ Un **composant React** est une fonction qui retourne un élément React.
 
 ##  **Exercice 1 — React et ReactDOM purs**
 
-* Affichez HELLO WORLD dans un fichier HTML.
-* Créez un paragraphe dans un div en écrivant le texte suivant :
+Affichez HELLO WORLD dans un fichier HTML.
+Créez un paragraphe dans un div en écrivant le texte suivant :
 
 *Le Virtual DOM est une copie du DOM en mémoire que React utilise pour préparer les changements sans toucher directement à la page.
 Il compare les différences et met à jour uniquement ce qui a changé, pour un rendu rapide et efficace.*
@@ -253,9 +253,9 @@ Il compare les différences et met à jour uniquement ce qui a changé, pour un 
 ##  **Exercice 2 — React et ReactDOM purs**
 
 Créez un composant `ProfileCard` affichant :
-* une image (prop `image`) ;
-* un nom (prop `name`) ;
-* un rôle (prop `role`).
+une image (prop `image`) ;
+un nom (prop `name`) ;
+un rôle (prop `role`).
 
 ### Remarques
 
