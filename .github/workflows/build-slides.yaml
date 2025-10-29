@@ -1,0 +1,56 @@
+name: Build Marp Slides
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch: # permet de le lancer manuellement depuis GitHub Actions
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Marp CLI
+        run: npm install -g @marp-team/marp-cli
+
+      - name: Build slides to docs/
+        run: |
+          mkdir -p docs
+          for file in Slides/*.md; do
+            marp "$file" --html --allow-local-files -o "docs/$(basename "${file%.md}.html")"
+          done
+
+      # - name: Upload built files as artifact (optional)
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: marp-slides
+      #     path: docs/
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload docs directory
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

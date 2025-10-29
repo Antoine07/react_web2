@@ -312,4 +312,3 @@ setNumbers([...numbers, 4]);
 Une "immutable update" = créer une **nouvelle copie modifiée**
 au lieu de modifier directement la valeur d'origine.
 Cela permet à React de détecter le changement et de **re-render correctement** le composant.
-
