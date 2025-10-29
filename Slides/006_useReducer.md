@@ -126,19 +126,18 @@ Suite des contraintes pour l'exercice.
 ### Étapes :
 
 1. Implémentez le `reducer(state, action)`
+ajouter un article → `items.push()` (en version immuable)
+supprimer un article → filtrez le tableau
+vider le panier
 
-   * ajouter un article → `items.push()` (en version immuable)
-   * supprimer un article → filtrez le tableau
-   * vider le panier
 2. Créez trois boutons :
+"Add product"
+"Remove last product"
+"Clear cart"
 
-   * “Add product”
-   * “Remove last product”
-   * “Clear cart”
 3. Affichez :
-
-   * La liste des articles
-   * Le total du panier
+La liste des articles
+Le total du panier
 
 ---
 
