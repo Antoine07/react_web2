@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React sans JSX</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        padding: 20px;
+      }
+      .card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 16px;
+        margin-bottom: 16px;
+        text-align: center;
+        width: 200px;
+      }
+      img {
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>React sans JSX</h1>
+    <div id="root"></div>
+
+    <!-- React et ReactDOM -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <script>
+      // --- Component ProfileCard ---
+      function ProfileCard(props) {
+        return React.createElement("div", { className: "card" }, [
+          React.createElement("img", { src: props.image, alt: props.name, width: 80 }),
+          React.createElement("h3", null, props.name),
+          React.createElement("p", null, props.role),
+        ]);
+      }
+
+      // --- Component App ---
+      function App() {
+        return React.createElement("div", null, [
+          React.createElement(ProfileCard, {
+            name: "Alice",
+            role: "Student",
+            image: "https://i.pravatar.cc/80?u=alice",
+          }),
+          React.createElement(ProfileCard, {
+            name: "Bob",
+            role: "Developer",
+            image: "https://i.pravatar.cc/80?u=bob",
+          }),
+        ]);
+      }
+
+      // --- Render to the DOM ---
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(React.createElement(App));
+    </script>
+  </body>
+</html>

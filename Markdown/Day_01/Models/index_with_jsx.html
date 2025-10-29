@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React avec JSX</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        padding: 20px;
+      }
+      .card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 16px;
+        margin-bottom: 16px;
+        text-align: center;
+        width: 200px;
+      }
+      img {
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>React avec JSX</h1>
+    <div id="root"></div>
+
+    <!-- React, ReactDOM et Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      // --- Component ProfileCard ---
+      function ProfileCard({ name, role, image }) {
+        return (
+          <div className="card">
+            <img src={image} alt={name} width="80" />
+            <h3>{name}</h3>
+            <p>{role}</p>
+          </div>
+        );
+      }
+
+      // --- Component App ---
+      function App() {
+        return (
+          <div>
+            <ProfileCard name="Alice" role="Student" image="https://i.pravatar.cc/80?u=alice" />
+            <ProfileCard name="Bob" role="Developer" image="https://i.pravatar.cc/80?u=bob" />
+          </div>
+        );
+      }
+
+      // --- Render to the DOM ---
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App />);
+    </script>
+  </body>
+</html>
