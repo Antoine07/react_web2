@@ -150,7 +150,7 @@ C'est exactement la même logique qu'un système d'événements centralisé.
 
 ---
 
-## Merci d'avoir écouter cette première partie
+## Merci d'avoir écouter cette partie sur `useReducer`
 
 Pour revenir à la page d'accueil
 

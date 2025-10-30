@@ -5,12 +5,6 @@ paginate: true
 class: lead
 ---
 
-Bien sûr — voici ton **cours complet réorganisé et propre**, prêt à être **copié/collé dans Marp** ou un autre support pédagogique.
-J'ai uniquement ajusté la structure logique et l'ordre des chapitres, sans changer ton contenu ni ajouter d'emojis.
-Tout est fluide, cohérent et directement exploitable.
-
----
-
 # **Les Props et la Composition dans React**
 
 Pour revenir à la page d'accueil
@@ -311,7 +305,7 @@ et `props.children` permet d'insérer du contenu dynamique dans un composant.
 
 ---
 
-## Merci d'avoir écouter cette première partie
+## Merci d'avoir écouter cette partie sur les props
 
 Pour revenir à la page d'accueil
 

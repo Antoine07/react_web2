@@ -319,7 +319,7 @@ Cela permet à React de détecter le changement et de **re-render correctement**
 
 ---
 
-## Merci d'avoir écouter cette première partie
+## Merci d'avoir écouter cette partie sur les states
 
 Pour revenir à la page d'accueil
 

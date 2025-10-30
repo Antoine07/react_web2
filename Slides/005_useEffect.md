@@ -229,7 +229,7 @@ Pour cet exercice vous pouvez partir sur un dossier `src` avec un fichier `App.j
 
 ---
 
-## Merci d'avoir écouter cette première partie
+## Merci d'avoir écouter cette partie sur `useEffect`
 
 Pour revenir à la page d'accueil
 
