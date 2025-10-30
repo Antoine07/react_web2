@@ -47,6 +47,8 @@
 
             console.log(notes)
 
+            const userInput = '<img src=x onerror=alert("Hacked!") />';
+
             // les parenthèses forcent le retour des valeurs dans le return
             return (
                 <React.Fragment>
@@ -60,6 +62,8 @@
                         })}
                     </ul>
                     <p>Moyenne de la classe : {average(notes)} </p>
+                    <div>{userInput}</div>
+                    <div dangerouslySetInnerHTML={{ __html: userInput }} />;
                 </React.Fragment>
             )
         }
