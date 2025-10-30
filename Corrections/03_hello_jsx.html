@@ -21,23 +21,41 @@
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <script type="text/babel" >
+    <script type="text/babel">
         function Hello() {
             return <h2>Hello World Component</h2>;
-          }
-        
-          function App() {
+        }
+
+        function App() {
+            const hour = new Date().getHours();
+
+            const notes = [12, 14, 16, 15, 14, 20]
+
             return (
-              <div>
-                <Hello />
-                <p>Rendered with JSX and Babel.</p>
-                <img src="./80.jpeg" />
-              </div>
+                <React.Fragment>
+                    <p>{true ? "yes" : "no"}</p>
+                    <h1>Hello </h1>
+                    <div className="container">
+                        <p>{hour}</p>
+                        <p>{1 + 2}</p>
+                        <Hello />
+                        <p>Rendered with JSX and Babel.</p>
+                        <img src="./80.jpeg" />
+                        <ul>
+                            {notes.map(note => {
+                                return (
+                                    <li>{note}</li>
+                                )
+                            })}
+                        </ul>
+
+                    </div>
+                </React.Fragment>
             );
-          }
-        
-          const root = ReactDOM.createRoot(document.getElementById("root"));
-          root.render(<App />);
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<App />);
     </script>
 </body>
 
