@@ -52,11 +52,31 @@ document.body.appendChild(el);
 
 ---
 
+### Structure hiérarchique d'une interface React
+
+<img src="./images/tree.png" width="700"  />
+
+> Chaque nœud représente un composant déclaratif.
+---
+
+## **Décrire l'UI comme un arbre de composants**
+
+Chaque interface React est composée **d'un arbre de composants** :
+
+* `App` est la **racine**.
+* Chaque composant peut contenir d'autres **composants enfants**.
+* L'arborescence représente **la hiérarchie logique** de l'interface (et non le DOM réel).
+
+> React parcourt cet arbre pour décider **quelles parties mettre à jour** lors d'un rendu.
+
+
+---
+
 ## 2. Créer une première page React
 
 ---
 
-### a. Structure de projet 
+###  Structure de projet 
 
 Vous allez copier/coller le fichier qui suit dans un fichier HTML classique, mais avant organisez-vous comme suit :
 
@@ -124,7 +144,7 @@ Ouvrez votre fichier `index.html` dans `vscode` et cliquez sur le bouton en bas 
 
 ---
 
-### b. Explication
+###  Explication
 
 La fonction :
 
