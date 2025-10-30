@@ -31,8 +31,35 @@
               image: "https://i.pravatar.cc/80?u=alice"
             }
         */
-    
-        const app = React.createElement("div", null, [])
+
+        // composant ProfileCard
+        function ProfileCard(props) {
+
+            return React.createElement(
+                "div",
+                null,
+                [
+                    React.createElement("img", {
+                        src: "https://i.pravatar.cc/80?u=alice",
+                        width : 80,
+                        height : 80,
+                        key: 1
+                    }),
+                    React.createElement("h2",{ key : 2},  "profil"),
+                    React.createElement("p", { key : 3}, "préseentation"),
+                ]
+            )
+        }
+
+        function App() {
+            return React.createElement("div", null, [
+                React.createElement(ProfileCard, { key: 1},  null),
+                React.createElement(ProfileCard,{ key: 2},  null),
+                React.createElement(ProfileCard,{ key: 3},  null),
+            ])
+        }
+
+        const app = React.createElement(App, null, [])
 
         root.render(app);
     </script>
