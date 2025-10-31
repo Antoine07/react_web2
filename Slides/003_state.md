@@ -98,6 +98,15 @@ root.render(<Counter />);
 ```
 
 ---
+### Appel d'une fonction dans le onClick
+
+Regardez l'exemple, à ne pas suivre, la fonction `handleCounter` est appelée, au montage du composant dans le DOM, si une mise à jour du state est effectuée dans celle-ci, un re-render infini se produira. 
+
+<img src="./images/appel_fonction.png" width="400" height="400" />
+
+
+---
+
 
 ### Mécanisme :
 
