@@ -59,26 +59,26 @@
 </head>
 
 <body>
-    <h1>Todo List</h1>
     <div id="root"></div>
 
     <script type="text/babel">
 
         function App(props){
-
-            setInterval(()=>{
-
-            }, 1000)
+            const [count, setCount] = React.useState(0)
 
             /*
-            setTimeout(() => {
-
+            const interval = setInterval(()=>{
+                setCount(count + 1 )
             }, 1000)
-
             **/
 
+            setTimeout(() => {
+                setCount(count + 1 ) // au bout d'une seconde ça fait un re-render
+            }, 1000)
+
+
             return(
-                <p>Hello</p>
+               <p>Counter: {count}</p>
             )
         }
 
