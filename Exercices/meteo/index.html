@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React – useEffect & useState</title>
+
+    <!-- React, ReactDOM et Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-slate-900 text-white min-h-screen flex flex-col items-center justify-center p-4">
+    <h1 class="text-3xl font-bold mb-6">Suivi de température sur 1h</h1>
+    <div id="root" class="w-full max-w-xl"></div>
+
+    <script type="text/babel">
+      const { useState, useEffect } = React;
+
+      function TemperatureTable() {
+        const [data, setData] = useState([]);
+        const [loading, setLoading] = useState(true);
+
+        // Simule la génération de températures sur une heure (60 min)
+        useEffect(() => {
+          setLoading(true);
+          const newData = [];
+          for (let i = 0; i < 60; i++) {
+            const hour = "14:" + (i < 10 ? "0" + i : i);
+            const temp = (Math.random() * 10 + 15).toFixed(1); // entre 15 et 25°C
+            newData.push({ time: hour, temperature: temp });
+          }
+          // Simule un petit délai de chargement
+          setTimeout(() => {
+            setData(newData);
+            setLoading(false);
+          }, 1000);
+        }, []);
+
+        return (
+          <div className="bg-slate-800 p-4 rounded-xl shadow-lg">
+            {loading ? (
+              <p className="text-center text-gray-400 animate-pulse">Chargement des données...</p>
+            ) : (
+              <table className="w-full border-collapse text-sm">
+                <thead>
+                  <tr className="bg-slate-700 text-gray-200">
+                    <th className="p-2 text-left">Heure</th>
+                    <th className="p-2 text-right">Température (°C)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.map((entry, index) => (
+                    <tr key={index} className="odd:bg-slate-800 even:bg-slate-700 hover:bg-slate-600 transition">
+                      <td className="p-2">{entry.time}</td>
+                      <td className="p-2 text-right">{entry.temperature}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
+          </div>
+        );
+      }
+
+      ReactDOM.createRoot(document.getElementById("root")).render(<TemperatureTable />);
+    </script>
+  </body>
+</html>

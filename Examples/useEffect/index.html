@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Props – ProductCard</title>
+
+    <!-- React, ReactDOM et Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <h1>Model with JSX</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        // --- Composant App ---
+        function App() {
+            const [count1, setCount1] = React.useState(0)
+            const [count2, setCount2] = React.useState(0)
+
+            // observer le changement d'état on utilise 
+            React.useEffect(() => {
+                console.log("Hello", count1, count2)
+            }, [count1, count2])
+
+            return (
+                <div className="container">
+                    <p>Count 1 : {count1} </p>
+                    <p><button onClick={() => setCount1(count1 + 1)} >+1 (count 1)</button></p>
+                    <p>Count 2 : {count2} </p>
+                    <p><button onClick={() => setCount2(count2 + 1)} >+1 (count 2)</button></p>
+
+                </div>
+            )
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<App />);
+    </script>
+</body>
+
+</html>

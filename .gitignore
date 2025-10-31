@@ -9,6 +9,8 @@ package.json
 
 .github/
 
+VIDEOS/
+
 Exercices/introduction
 Exercices/props
 Exercices/state

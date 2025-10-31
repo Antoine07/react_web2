@@ -141,6 +141,31 @@ Chaque clic :
 
 ---
 
+# **Exercice 2 - Exercice météo**
+
+Vous avez du code dans le dossier correction.
+
+1. Créez un composant `TemperatureTable`.
+2. États :
+`data` : tableau d'objets `{ time, temperature }`.
+`loading` : booléen pour afficher "Chargement..." avant les données. 
+3. Dans `useEffect` :
+Utilisez `setTimeout` (1 s) pour simuler un chargement des données (voir le tableau dans le fichier lui-même)
+4. Affichez un tableau à deux colonnes : **Heure / Température (°C)**.
+5. Stylisez avec Tailwind (fond sombre, lignes alternées, hover).
+
+---
+
+**Exemple attendu :**
+
+| Heure | Température (°C) |
+| ----- | ---------------- |
+| 14:00 | 18.7             |
+| 14:01 | 19.3             |
+| …     | …                |
+
+---
+
 
 ## 6. Nettoyage des effets (clean-up)
 
@@ -182,50 +207,6 @@ useEffect() exécuté après affichage
    ↓
 → nouveau render → nouvel effet
 ```
-
----
-
-## **Exercice — Horloge avec montage et démontage**
-
-Créer une horloge qui :
-
-* Affiche l'heure actuelle, mise à jour chaque seconde.
-* Se démonte proprement (arrêt du timer).
-* Informe le parent lorsqu'elle est démontée (affiche un message dans le DOM).
-
-Pour cet exercice vous pouvez partir sur un dossier `src` avec un fichier `App.jsx` et à la racine du projet un fichier `index.html`. Pas besoin d'utiliser vite dans ce projet.
-
----
-
-### Contraintes
-
-1. Créer un composant `Clock` :
-
-   * utilise `useState()` pour stocker l'heure ;
-   * utilise `useEffect()` pour démarrer un `setInterval()` ;
-   * dans le nettoyage (`return` du `useEffect`), appeler une fonction `onUnmount()` passée par le parent.
-2. Créer un composant `App` :
-
-   * gère un state `showClock` (toggle) et un message ;
-   * affiche soit `<Clock />`, soit le message de démontage.
-
----
-
-## **Étapes à réaliser**
-
-1. Initialiser le projet (ou fichier HTML) avec React et ReactDOM.
-2. Implémenter `Clock` :
-
-   * au montage → démarrer le timer (`setInterval()`) ;
-   * au démontage → nettoyer avec `clearInterval()` et notifier le parent.
-3. Implémenter `App` :
-
-   * un bouton `Toggle Clock` pour monter / démonter l'horloge ;
-   * afficher le message transmis par `onUnmount()`.
-4. Tester dans la console :
-
-   * le timer s'arrête bien après démontage ;
-   * le message s'affiche à la place de l'horloge.
 
 ---
 
