@@ -20,6 +20,11 @@
 - [Introduction](https://antoine07.github.io/react_web2/001_introduction.html)
 - [Props](https://antoine07.github.io/react_web2/002_props.html)
 - [States](https://antoine07.github.io/react_web2/003_state.html)
+
+QCM
+
+- [qcm](https://antoine07.github.io/react_web2/01_qcm_generalites.html)
+
 - [useEffect](https://antoine07.github.io/react_web2/005_useEffect.html)
 - [useReducer](https://antoine07.github.io/react_web2/006_useReducer.html)
 - [Formulaire/validation](https://antoine07.github.io/react_web2/006_useReducer.html)
