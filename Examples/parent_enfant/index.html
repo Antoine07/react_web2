@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Props – ProductCard</title>
+
+    <!-- React, ReactDOM et Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function Counter() {
+            const [count, setCount] = React.useState(0)
+            return <Bt value={count} onIncrement={() => setCount(count + 1)} />
+        }
+
+        function Bt({ value, onIncrement }) {
+            return <button onClick={onIncrement}>Count: {value}</button>;
+          }
+
+        function App(props) {
+
+            return (
+                <React.Fragment>
+                    <Counter />
+                </React.Fragment>
+            )
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<App />);
+    </script>
+</body>
+
+</html>
