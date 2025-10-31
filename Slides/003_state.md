@@ -119,9 +119,9 @@ root.render(<Counter />);
 
 Créer un composant `Counter` avec trois boutons :
 
-* Incrémenter
-* Décrémenter
-* Réinitialiser
+Incrémenter
+Décrémenter
+Réinitialiser
 
 **Bonus :** empêcher le compteur de descendre sous 0.
 
@@ -163,9 +163,9 @@ function NameInput() {
 
 Créer un composant `LoginForm` :
 
-* deux champs (`email`, `password`) contrôlés par le state,
-* un bouton "Submit" qui affiche les valeurs saisies dans la console,
-* vider les champs après soumission.
+1. deux champs (`email`, `password`) contrôlés par le state,
+1. un bouton "Submit" qui affiche les valeurs saisies dans la console,
+1. vider les champs après soumission.
 
 Utiliser :
 
