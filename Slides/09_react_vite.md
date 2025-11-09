@@ -101,7 +101,9 @@ Le résultat est généré dans :
 dist/
 ```
 
-* Pour prévisualiser la version prête à déployer :
+---
+
+Pour prévisualiser la version prête à déployer :
 
 ```bash
 npm run preview
