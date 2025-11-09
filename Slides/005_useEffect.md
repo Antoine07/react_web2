@@ -201,7 +201,7 @@ useEffect(() => {
 ```
 render() 
    ↓
-useEffect() exécuté après affichage
+useEffect() exécuté après affichage 
    ↓
 (setState ?)
    ↓

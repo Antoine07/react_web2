@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>React Cleanup - Valeur précédente</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useReducer } = React // super state dans lequel on va pouvoir faire des fonctionnalités séparées du composant
+
+        const initialState = { count : 0 } // state
+
+        function reducer(state, action){
+            switch(action.type){
+                case "increment": 
+                    // de la logique métier
+                    return { ...state, count : state.count + 1 } // Met à jour le state
+
+                case "decrement":
+                    // de la logique métier 
+                    return { ...state, count : state.count - 1 } // Met à jour le state
+                
+                case "reset":
+                    return { ...state, count : 0 }
+
+                default:
+                    return state
+            }
+        }
+
+        function App() {
+            const [state, dispatch ] = useReducer(reducer, initialState)
+
+            return (
+                <div>
+                    <p>Counter: {state.count}</p>
+                    <button onClick={() => dispatch({type : "increment"})} >Increment</button>
+                    <button onClick={() => dispatch({type : "decrement"})} >Decrement</button>
+                    <button onClick={() => dispatch({type : "reset"})} >Reset</button>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<App />);
+    </script>
+</body>
+
+</html>

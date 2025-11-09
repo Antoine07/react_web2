@@ -86,67 +86,21 @@ On garde une approche similaire à Redux, mais **sans dépendance externe**.
 
 ---
 
-## 4. Exercice — Gestion de panier
+## Exercice 
 
-Créer un composant `Cart` qui gère un panier simple à l'aide de `useReducer`.
+Implémentez une petite calculatrice permettant d’additionner deux nombres.
 
-### Contraintes :
-
-1. L'état initial :
-
-  ```js
-  { items: [], total: 0 }
-  ```
-2. Trois actions :
-
-`{ type: "add", item: { name: "Product A", price: 10 } }`
-`{ type: "remove", index: 0 }`
-`{ type: "clear" }`
-
----
-
-Suite des contraintes pour l'exercice.
-
-Définir un modèle pour vos données
+Voici les données de votre initialState proposées en exemple pour faire cet exercice 
 
 ```js
-{ id: 1, name: "Mouse", price: 15, quantity: 1 }
-/*
-{
-  id: number,        // identifiant unique
-  name: string,      // nom du produit
-  price: number,     // prix en €
-  quantity: number   // quantité dans le panier
-}
-*/
+// État initial
+const initialState = { 
+  a: "", 
+  b: "", 
+  result: 0, 
+  error: "" 
+};
 ```
-
----
-
-### Étapes :
-
-1. Implémentez le `reducer(state, action)`
-ajouter un article → `items.push()` (en version immuable)
-supprimer un article → filtrez le tableau
-vider le panier
-
-2. Créez trois boutons :
-"Add product"
-"Remove last product"
-"Clear cart"
-
-3. Affichez :
-La liste des articles
-Le total du panier
-
----
-
-### Indications :
-
-Utilisez le **pattern des événements** :
-chaque bouton **déclenche une action** claire que `reducer` interprète.
-C'est exactement la même logique qu'un système d'événements centralisé.
-
 
 ---
 

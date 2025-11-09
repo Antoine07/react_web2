@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>React Cleanup - Valeur précédente</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    function API(props){
+
+      useEffect(()=> {
+        // connexion a une API une ressource
+        const interval = setInterval(()=> {
+          console.log("connect to API récupération des posts ... ", Math.random())
+        }, 1000)
+
+        // nettoyage (optionnelle) exécuté au démontage 
+        return () => {
+          console.log("je me démonte") 
+          clearInterval(interval)
+        }
+      }, []) // On se connecte à l'API rien n'est écouté exécuté on montage 
+
+      return(
+        <React.Fragment>
+          <p>Posts</p>
+          <p>posts ...</p>
+        </React.Fragment>
+      )
+    }
+
+    function App() {
+      const [status, setStatus] = useState(true)
+
+      return (
+        <div>
+          <h1>Nos supers posts</h1>
+          <button onClick={() =>setStatus(!status)}>Montage/démontage</button>
+          {status && (
+            <API  />
+          )}
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</body>
+</html>
