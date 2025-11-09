@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Démontage + useReducer + useEffect</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script type="text/babel">
+  const { useReducer, useEffect, useState } = React;
+
+  const initialState = { count: 0, step: 1 };
+
+  function reducer(state, action) {
+    switch (action.type) {
+      case "increment":
+        return { ...state, count: state.count + state.step };
+      case "setStep":
+        return { ...state, step: action.value };
+      default:
+        return state;
+    }
+  }
+
+  function Counter() {
+    const [state, dispatch] = useReducer(reducer, initialState);
+
+    useEffect(() => {
+      console.log("→ Le composant est monté / mise à jour, count =", state.count);
+
+      return () => {
+        // **Ici on voit la valeur au moment du démontage**
+        console.log("→ CLEANUP au démontage : count précédent =", state.count);
+      };
+    }, [state.count]);
+
+    return (
+      <div>
+        <h2>Compteur</h2>
+        <p>count : {state.count}</p>
+        <p>step : {state.step}</p>
+
+        <button onClick={() => dispatch({ type: "increment" })}>
+          + step
+        </button>
+
+        <br /><br />
+        <label>
+          changer step :
+          <input
+            type="number"
+            value={state.step}
+            onChange={(e) =>
+              dispatch({ type: "setStep", value: Number(e.target.value) })
+            }
+          />
+        </label>
+      </div>
+    );
+  }
+
+  function App() {
+    const [visible, setVisible] = useState(true);
+
+    return (
+      <div>
+        <button onClick={() => setVisible(!visible)}>
+          {visible ? "Démonter le composant" : "Remonter le composant"}
+        </button>
+
+        {visible && <Counter />}
+      </div>
+    );
+  }
+
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(<App />);
+</script>
+
+</body>
+</html>

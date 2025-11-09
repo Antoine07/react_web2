@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>React Cleanup - Valeur précédente</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    function App() {
+      const [count, setCount] = useState(0);
+
+      useEffect(() => {
+        console.log("Effet monté avec count =", count);
+
+        return () => {
+          console.log("Nettoyage, ancienne valeur =", count);
+        };
+      }, [count]);
+
+      return (
+        <div>
+          <h1>Count : {count}</h1>
+          <button onClick={() => setCount(count + 1)}>
+            +1
+          </button>
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</body>
+</html>
