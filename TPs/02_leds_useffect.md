@@ -2,6 +2,8 @@
 
 ---
 
+<img src="./images/app-leds.gif" width="500" />
+
 ### **Decription**
 
 Dans ce TP on va ajouter un `useEffect` pour réviser cette notion.

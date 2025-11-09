@@ -111,3 +111,11 @@ npm run preview
 
 **Développement** = lisible, rapide, orienté correction.
 **Build** = optimisé, compact, orienté déploiement.
+
+---
+
+## Merci d'avoir écouter cette première partie
+
+Pour revenir à la page d'accueil
+
+[Plan du cours](https://antoine07.github.io/react_web2/#2)

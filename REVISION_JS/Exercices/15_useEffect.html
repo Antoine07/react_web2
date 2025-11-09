@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>useEffect - Valeur précédente vs actuelle</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body style="background:#111; color:#eee; font-family:sans-serif; padding:30px;">
+  <div id="root"></div>
+
+  <script type="text/babel">
+
+    const { useState, useEffect, useRef } = React;
+
+    function Counter() {
+      const [count, setCount] = useState(0);
+
+      // useRef sert à stocker une valeur entre 2 rendus, sans déclencher de re-render
+      const previousCount = useRef(count);
+
+      useEffect(() => {
+        console.log("Compteur mis à jour");
+        console.log("→ Valeur précédente :", previousCount.current);
+        console.log("→ Valeur actuelle :", count);
+
+        // Mise à jour de la valeur précédente pour le prochain cycle
+        previousCount.current = count;
+      }, [count]);
+
+      return (
+        <div style={{ fontSize: "20px" }}>
+          <p>Valeur actuelle : <strong>{count}</strong></p>
+          <p>Valeur précédente : <strong>{previousCount.current}</strong></p>
+
+          <button onClick={() => setCount(count + 1)}>
+            Incrémenter
+          </button>
+        </div>
+      );
+    }
+
+    function App() {
+      return (
+        <div>
+          <h1>Exemple useEffect : Valeur actuelle vs précédente</h1>
+          <Counter />
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+
+  </script>
+</body>
+</html>

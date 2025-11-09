@@ -54,3 +54,11 @@ function App() {
 `state` = données
 `dispatch(action)` = intention de modifier l'état
 `reducer` = décide *comment* l'état change
+
+---
+
+## Merci d'avoir écouter cette première partie
+
+Pour revenir à la page d'accueil
+
+[Plan du cours](https://antoine07.github.io/react_web2/#2)

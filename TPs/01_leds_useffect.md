@@ -4,6 +4,8 @@
 
 ### **Description**
 
+<img src="./images/app-leds-simple.gif" width="500" />
+
 Mettre en place un panneau de 3 LEDs (rouge, jaune, vert) dont l'état actif change selon des commandes.
 L'interface doit permettre de passer à la LED suivante, précédente ou de réinitialiser l'affichage.
 
