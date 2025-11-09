@@ -38,8 +38,8 @@ Dans nos projets actuels on utilise `vite`
 
 Voici deux markdowns que vous récupérez sur le dépôt.
 
-- [Leds useReducer](https://github.com/Antoine07/react_web2/TPs/01_leds_useffect.md)
-- [Leds useEffect & useReducer](https://github.com/Antoine07/react_web2/TPs/02_leds_useffect.md)
+- [Leds useReducer](https://github.com/Antoine07/react_web2/blob/main/TPs/01_leds_useffect.md)
+- [Leds useEffect & useReducer](https://github.com/Antoine07/react_web2/blob/main/TPs/02_leds_useffect.md)
 
 ---
 
