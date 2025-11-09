@@ -28,9 +28,9 @@ de la **logique d'affichage** (ce que React affiche).
 const [state, dispatch] = React.useReducer(reducer, initialState);
 ```
 
-* `state` → état actuel
-* `dispatch(action)` → envoie une **action**
-* `reducer(state, action)` → fonction qui décrit **comment l'état évolue**
+`state` → état actuel
+`dispatch(action)` → envoie une **action**
+`reducer(state, action)` → fonction qui décrit **comment l'état évolue**
 
 ---
 
@@ -78,9 +78,9 @@ function Counter() {
 
 ## 3. Pourquoi c'est utile ?
 
-* On centralise la logique dans une **fonction pure(*)** (`reducer`)
-* On facilite la maintenance d'applications plus grandes.
-* On garde une approche similaire à Redux, mais **sans dépendance externe**.
+On centralise la logique dans une **fonction pure(*)** (`reducer`)
+On facilite la maintenance d'applications plus grandes.
+On garde une approche similaire à Redux, mais **sans dépendance externe**.
 
 (*) Une fonction pure est une fonction qui, pour les mêmes entrées, retourne toujours le même résultat sans modifier de données externes (pas d’effets de bord).
 
@@ -92,22 +92,22 @@ Créer un composant `Cart` qui gère un panier simple à l'aide de `useReducer`.
 
 ### Contraintes :
 
-* L'état initial :
+1. L'état initial :
 
   ```js
   { items: [], total: 0 }
   ```
-* Trois actions :
+2. Trois actions :
 
-  * `{ type: "add", item: { name: "Product A", price: 10 } }`
-  * `{ type: "remove", index: 0 }`
-  * `{ type: "clear" }`
+`{ type: "add", item: { name: "Product A", price: 10 } }`
+`{ type: "remove", index: 0 }`
+`{ type: "clear" }`
 
 ---
 
 Suite des contraintes pour l'exercice.
 
-* Définir un modèle pour vos données
+Définir un modèle pour vos données
 
 ```js
 { id: 1, name: "Mouse", price: 15, quantity: 1 }
