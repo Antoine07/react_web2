@@ -4,6 +4,12 @@
 
 <img src="./images/app-leds.gif" width="500" />
 
+Vous avez pour les deux exercices sur les leds un modèle pour démarrer ce tp : 
+
+- [App.jsx](./models/App.jsx)
+- [LedPanel.jsx](./models/LedPanel.jsx)
+
+
 ### **Decription**
 
 Dans ce TP on va ajouter un `useEffect` pour réviser cette notion.

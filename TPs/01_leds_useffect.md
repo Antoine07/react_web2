@@ -6,6 +6,11 @@
 
 <img src="./images/app-leds-simple.gif" width="500" />
 
+Vous avez pour les deux exercices sur les leds un modèle pour démarrer ce tp : 
+
+- [App.jsx](./models/App.jsx)
+- [LedPanel.jsx](./models/LedPanel.jsx)
+
 Mettre en place un panneau de 3 LEDs (rouge, jaune, vert) dont l'état actif change selon des commandes.
 L'interface doit permettre de passer à la LED suivante, précédente ou de réinitialiser l'affichage.
 
