@@ -27,13 +27,19 @@ QCM
 
 - [useEffect](https://antoine07.github.io/react_web2/005_useEffect.html)
 - [useReducer](https://antoine07.github.io/react_web2/006_useReducer.html)
-- [Formulaire/validation](https://antoine07.github.io/react_web2/006_useReducer.html)
 
-Dans un projet moderne on utilisera `vite`
+Dans nos projets actuels on utilise `vite`
 
-- [vite](https://antoine07.github.io/react_web2/007_vite.html)
+- [vite](https://antoine07.github.io/react_web2/09_react_vite.html)
 
-- [formulaire](https://antoine07.github.io/react_web2/008_form.html)
+---
+
+### Pratiques TPs
+
+Voici deux markdowns que vous récupérez sur le dépôt.
+
+- [Leds useReducer](https://github.com/Antoine07/react_web2/TPs/01_leds_useffect.md)
+- [Leds useEffect & useReducer](https://github.com/Antoine07/react_web2/TPs/02_leds_useffect.md)
 
 ---
 
