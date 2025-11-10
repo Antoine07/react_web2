@@ -47,5 +47,9 @@ Voici deux markdowns que vous récupérez sur le dépôt.
 
 [installation nvm](../docs/000_install.html)
 
+### Zustands gestion du state global
 
+- [Zustands](https://antoine07.github.io/react_web2/12_zustand_intro_01.html)
+
+- [Zustands](https://antoine07.github.io/react_web2/13_zustand_intro_02.html)
 
