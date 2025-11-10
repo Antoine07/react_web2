@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Props – ProductCard</title>
+
+    <!-- React, ReactDOM et Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <h1>UseReducer - example</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useReducer } = React;
+        const inititialState = { nb1: "", nb2: "", resultat: "", message: {} }
+
+        function reducer(state, action) {
+            switch (action.type) {
+                case "set":
+                    const { value, name } = action.data
+                    if (isNaN(Number(value))) {
+                        return { ...state, message: { ...state.message,  [name]: `Error ${name}, "${value}" not numeric value` } }
+                    }
+
+                    return { ...state, [name]: value, message: "" }
+
+
+                case "add":
+                    if (state.nb1 == "" || state.nb2 == "") {
+                        return { ...state, message: `Attention champ vide` }
+                    }
+
+                    return {
+                        ...state,
+                        nb1: "",
+                        nb2: "",
+                        resultat: parseFloat(state.nb1) + parseFloat(state.nb2),
+                        message: ""
+                    }
+
+                default:
+                    return state
+            }
+        }
+
+        function Calculate(props) {
+            const [state, dispatch] = useReducer(reducer, inititialState)
+
+            return (
+                <div className="container">
+                    <div>
+                        {state.resultat && (<p>{state.resultat}</p>)}
+                        <label >Number 1</label>
+                        <input
+                            type="text"
+                            name="nb1"
+                            value={state.nb1}
+                            onChange={(e) => dispatch({
+                                type: "set",
+                                data: { value: e.target.value, name: "nb1" }
+                            })} />
+                        {state.message?.nb1 && (<p style={{ color: "red" }}>{state.message.nb1}</p>)}
+                    </div>
+                    <div>
+                        <label >Number 2</label>
+                        <input
+                            type="text"
+                            name="nb2"
+                            value={state.nb2}
+                            onChange={(e) => dispatch({
+                                type: "set",
+                                data: { value: e.target.value, name: "nb2" }
+                            })} />
+                        {state.message?.nb2 && (<p style={{ color: "red" }}>{state.message.nb2}</p>)}
+                    </div>
+
+                    <button onClick={() => dispatch({ type: "add" })}>Add</button>
+
+                </div>
+            )
+        }
+
+        // --- Composant App ---
+        function App() {
+
+            return (
+                <div className="container">
+                    <p>Calculatrice</p>
+                    <Calculate />
+                </div>
+            )
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<App />);
+    </script>
+</body>
+
+</html>
