@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Props – ProductCard</title>
+
+    <!-- React, ReactDOM et Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <h1>UseReducer - example</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useReducer } = React;
+        const inititialState = { nb1: "", nb2: "", resultat: 0, message: "" }
+
+        function reducer(state, action) {
+            switch (action.type) {
+                case "setNb1":
+                    if (isNaN(Number(action.value))) {
+                        return { ...state, message: `Le champ number1 n'est pas un nombre` }
+                    }
+
+                    return { ...state, nb1: action.value, message: "" }
+
+                case "setNb2":
+                    if (isNaN(Number(action.value))) {
+                        return { ...state, message: `Le champ number2 n'est pas un nombre` }
+                    }
+
+                    return { ...state, nb2: action.value, message: "" }
+
+                case "add":
+                    if (state.nb1 == "" || state.nb2 == "") {
+                        return { ...state, message: `Attention champ vide` }
+                    }
+
+                    return {
+                        ...state,
+                        nb1: "",
+                        nb2: "",
+                        resultat: parseFloat(state.nb1) + parseFloat(state.nb2),
+                        message: ""
+                    }
+
+                default:
+                    return state
+            }
+        }
+
+        function Calculate(props) {
+            const [state, dispatch] = useReducer(reducer, inititialState)
+
+            return (
+                <div className="container">
+                    <div>
+                        {state.resultat && (<p>{state.resultat}</p>)}
+                        {state.message && (<p style={{ color: "red" }}>{state.message}</p>)}
+                        <label >Number 1</label>
+                        <input
+                            type="text"
+                            name="nb1"
+                            value={state.nb1}
+                            onChange={(e) => dispatch({
+                                type: "setNb1",
+                                value: e.target.value
+                            })} />
+                    </div>
+                    <div>
+                        <label >Number 2</label>
+                        <input
+                            type="text"
+                            name="nb2"
+                            value={state.nb2}
+                            onChange={(e) => dispatch({
+                                type: "setNb2",
+                                value: e.target.value
+                            })} />
+                    </div>
+
+                    <button onClick={() => dispatch({ type: "add" })}>Add</button>
+
+                </div>
+            )
+        }
+
+        // --- Composant App ---
+        function App() {
+
+            return (
+                <div className="container">
+                    <p>Calculatrice</p>
+                    <Calculate />
+                </div>
+            )
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<App />);
+    </script>
+</body>
+
+</html>
