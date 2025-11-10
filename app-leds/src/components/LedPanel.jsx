@@ -1,0 +1,24 @@
+import React from 'react'
+
+function LedPanel({ active }) {
+  const leds = [
+    { color: 'red', bgClass: 'bg-red-500' },
+    { color: 'yellow', bgClass: 'bg-yellow-400' },
+    { color: 'green', bgClass: 'bg-green-500' },
+  ]
+
+  return (
+    <div className="flex gap-4 justify-center items-center">
+          <div
+            className={`
+              w-10 h-10 rounded-full transition-all duration-300
+              ${leds[0].bgClass}  'scale-110 opacity-100 shadow-lg'
+            `}
+          />
+        
+    </div>
+  )
+}
+
+export default LedPanel
+
