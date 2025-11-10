@@ -1,67 +1,62 @@
-import React, { useReducer } from 'react'
-import LedPanel from './LedPanel.jsx'
+import React, { useReducer } from "react";
+import LedPanel from "./components/LedPanel";
 
-const initialState = { active: 'red' }
+import Button from "@/components/ui/Button";
+
+const initialState = { active: "red" };
 
 function reducer(state, action) {
   switch (action.type) {
-    case 'NEXT':
+    case "NEXT":
       return {
-        active:
-          state.active === 'red'
-            ? 'yellow'
-            : state.active === 'yellow'
-            ? 'green'
-            : 'red',
+        ...state,
+        active: state.active == "red" ? "yellow" : state.active == "yellow" ? "green" : "red"
       }
-    case 'PREV':
+    case "PREV":
+        return {
+          ...state,
+          active: state.active == "red" ? "green" : state.active == "yellow" ? "red" : "yellow"
+        }
+    case "RESET":
       return {
-        active:
-          state.active === 'red'
-            ? 'green'
-            : state.active === 'yellow'
-            ? 'red'
-            : 'yellow',
+        ...state, active : "red"
       }
-    case 'RESET':
-      return { active: 'red' }
     default:
-      return state
+      return state;
   }
 }
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-gray-100">
       <div className="space-y-8">
-        <LedPanel active={state.active} />
 
+        <LedPanel active={state.active} />
         <div className="flex gap-4 justify-center">
-          <button
-            onClick={() => dispatch({ type: 'PREV' })}
+          <button 
             className="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-200 font-medium"
+            onClick={() => dispatch({type : "PREV"})}
           >
             PREV
           </button>
-          <button
-            onClick={() => dispatch({ type: 'RESET' })}
+          <button 
             className="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-200 font-medium"
+            onClick={() => dispatch({type : "RESET"})}
           >
             RESET
           </button>
-          <button
-            onClick={() => dispatch({ type: 'NEXT' })}
+          <button 
             className="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-200 font-medium"
+            onClick={() => dispatch({type : "NEXT"})}
           >
             NEXT
           </button>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
-
+export default App;
