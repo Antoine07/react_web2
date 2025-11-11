@@ -128,13 +128,11 @@ src/
     useUIStore.js       // état interface (thème, modals…)
     useTasksStore.js    // état métier (ex : liste de tâches)
 
-  pages/
+  pages/               // utile quand on va faire du routing
     Home.jsx
     Dashboard.jsx
 
-  utils/
-    formatDate.js
-    api.js              // appels réseau (fetch, axios…)
+  services/
 
   App.jsx
   main.jsx

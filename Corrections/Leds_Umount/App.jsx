@@ -1,94 +1,95 @@
-import React, { useReducer, useState, useEffect } from 'react'
-import LedPanel from './LedPanel.jsx'
+import { useReducer, useState } from "react";
+import LedPanel from "@/components/LedPanel";
+import Counter from "@/components/Counter";
+import CounterShow from "@/components/CounterShow";
 
-const initialState = { active: 'red' }
+const initialState = { active: "red", count: 0 };
 
 function reducer(state, action) {
   switch (action.type) {
-    case 'NEXT':
+    case "NEXT":
       return {
+        ...state,
         active:
-          state.active === 'red'
-            ? 'yellow'
-            : state.active === 'yellow'
-            ? 'green'
-            : 'red',
-      }
-    case 'PREV':
+          state.active == "red"
+            ? "yellow"
+            : state.active == "yellow"
+            ? "green"
+            : "red",
+      };
+    case "PREV":
       return {
+        ...state,
         active:
-          state.active === 'red'
-            ? 'green'
-            : state.active === 'yellow'
-            ? 'red'
-            : 'yellow',
-      }
-    case 'RESET':
-      return { active: 'red' }
+          state.active == "red"
+            ? "green"
+            : state.active == "yellow"
+            ? "red"
+            : "yellow",
+      };
+    case "RESET":
+      return {
+        ...state,
+        active: "red",
+      };
+    case "SET_COUNT":
+      return {
+        ...state,
+        count: action.count,
+      };
     default:
-      return state
+      return state;
   }
 }
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, initialState)
-  const [changeCount, setChangeCount] = useState(0)
-  const [isTopLedMounted, setIsTopLedMounted] = useState(true)
-  const [dismountValue, setDismountValue] = useState(null)
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const [status, setStatus] = useState(true);
 
-  useEffect(() => {
-    setChangeCount((prev) => prev + 1)
-  }, [state.active])
+  const onMount = () => {
+    setStatus(!status);
+  };
 
-  const handleDismount = () => {
-    if (isTopLedMounted) {
-      setDismountValue(changeCount)
-      setIsTopLedMounted(false)
-    }
-  }
-
-  const handleMount = () => {
-    if (!isTopLedMounted) {
-      setIsTopLedMounted(true)
-      setDismountValue(null)
-    }
-  }
+  const countValue = (c) => {
+    dispatch({ type: "SET_COUNT", count: c });
+  };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-gray-100">
       <div className="space-y-8">
-        <LedPanel 
-          active={state.active} 
-          isTopLedMounted={isTopLedMounted}
-          dismountValue={dismountValue}
-          onDismount={handleDismount}
-          onMount={handleMount}
-        />
-
+        {status && (
+          <Counter
+            onMount={onMount}
+            countValue={countValue}
+            active={state.active}
+            memoryCounter={state.count}
+          />
+        )}
+        {!status && <CounterShow onMount={onMount} countValue={state.count} />}
+        <LedPanel active={state.active} dismountValue={state.count} />
         <div className="flex gap-4 justify-center">
           <button
-            onClick={() => dispatch({ type: 'PREV' })}
             className="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-200 font-medium"
+            onClick={() => dispatch({ type: "PREV" })}
           >
             PREV
           </button>
           <button
-            onClick={() => dispatch({ type: 'RESET' })}
             className="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-200 font-medium"
+            onClick={() => dispatch({ type: "RESET" })}
           >
             RESET
           </button>
           <button
-            onClick={() => dispatch({ type: 'NEXT' })}
             className="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-200 font-medium"
+            onClick={() => dispatch({ type: "NEXT" })}
           >
             NEXT
           </button>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
-
+export default App;
