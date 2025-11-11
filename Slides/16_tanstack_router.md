@@ -101,6 +101,8 @@ export default defineConfig({
 })
 ```
 
+---
+
 ## 3) Créez l'arborescence suivante 
 
 ```txt
@@ -163,6 +165,8 @@ export const Route = createFileRoute('/about')({
 
 ```
 
+---
+
 ## 4) Le fichier `main.jsx`
 
 ```js
@@ -187,6 +191,14 @@ if (!rootElement.innerHTML) {
   )
 }
 ```
+
+---
+
+### Exercice Routing
+
+Reprenez l'exercice sur la petite machine de Turing et ajoutez un menu avec les items suivants Home pour présenter le projet et un item Machine de Turing pour tester la machine.
+
+Optionnel vous pouvez ajouter un item de menu pour persister le nombre de fois que vous avez tester cette machine.
 
 ---
 

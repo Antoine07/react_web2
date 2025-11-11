@@ -10,111 +10,8 @@ class: lead
 
 ---
 
-### **Pourquoi séparer l'état en plusieurs stores**
 
-Dans une application réelle, tout mettre dans un seul store rend l'état :
-
-1. difficile à lire
-1. difficile à maintenir
-1. difficile à faire évoluer
-
----
-
-### Retenir ce qui suit 
-
-**Idée importante :**
-On ne sépare pas en stores par composants,
-on sépare **par domaines logiques**.
-
----
-
-Exemples de domaines :
-
-1. Authentification (utilisateur connecté, login/logout)
-1. Interface (thème, panneaux ouverts, modals)
-1. Données métier (ex : tâches, produits, configuration, etc.)
-
-Chaque domaine devient **un store indépendant**.
-
----
-
-### **Exemple : Un store pour l'utilisateur + un store pour l'UI**
-
----
-
-Pour un utilisateur.
-
-```js
-// useUserStore.js
-import { create } from "zustand"
-
-export const useUserStore = create((set) => ({
-  user: null,
-  login: (name) => set({ user: { name } }),
-  logout: () => set({ user: null })
-}))
-```
-
----
-
-Pour l'UI.
-
-```js
-// useUIStore.js
-import { create } from "zustand"
-
-export const useUIStore = create((set) => ({
-  theme: "light",
-  toggleTheme: () =>
-    set((state) => ({
-      theme: state.theme === "light" ? "dark" : "light"
-    }))
-}))
-```
-
----
-
-**Ce que cela change :**
-
-1. Chaque store est **court**, clair, lisible.
-1. On modifie **un domaine** sans toucher aux autres.
-1. Aucun store n'a besoin de connaître l'autre.
-
----
-
-### **Composants qui consomment indépendamment**
-
-```jsx
-// Afficher le nom de l'utilisateur
-import { useUserStore } from "./useUserStore"
-
-function Header() {
-  const user = useUserStore((state) => state.user)
-  return <div>{user ? `Bonjour ${user.name}` : "Non connecté"}</div>
-}
-```
-
-```jsx
-// Bouton de changement de thème
-import { useUIStore } from "./useUIStore"
-
-function ThemeButton() {
-  const toggleTheme = useUIStore((state) => state.toggleTheme)
-  return <button onClick={toggleTheme}>Changer le thème</button>
-}
-```
-
----
-
-**Résultat obtenu :**
-
-1. Les composants prennent **uniquement ce qui les concerne**
-1. L'architecture reste **propre et modulaire**
-1. L'UI peut évoluer **sans réécrire la logique**
-
----
-
-### Architecture conseillée
+### Architecture en composant 
 
 ```txt
 src/
@@ -134,9 +31,17 @@ src/
 
   services/
 
-  App.jsx
-  main.jsx
+...
 ```
+
+---
+
+### Exercice Zustand
+
+1. Créez une application avec Zustand, Tailwind CSS qui affiche une liste de nombres numériques, ajoutez les fonctionnalités suivantes 
+  1.1 Mélangez la liste
+  1.1 Ajoutez un nombre qui n'est pas dans la liste et gérez le cas où ce nombre est déjà dans la liste
+  1.1 Comptez le nombre de nombre divisible par 3.
 
 ---
 

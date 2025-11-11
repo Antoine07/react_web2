@@ -16,6 +16,8 @@ class: lead
 Un store n'est pas limité à une seule valeur.
 On peut regrouper plusieurs **données** et **logiques** cohérentes ensemble.
 
+---
+
 **Exemple : gestion d'un utilisateur connecté**
 
 ```js
@@ -28,8 +30,6 @@ export const useUserStore = create((set) => ({
   logout: () => set({ user: null })
 }))
 ```
-
-**Idées clés :**
 
 1. L'état (`user`) est **centralisé**
 1. Les fonctions (`login`, `logout`) sont **au même endroit**
@@ -67,7 +67,7 @@ function LoginButton() {
 
 ### **Structurer le store sans complexité**
 
-Lorsque l'état devient plus riche, on le **regroupe par logique**, jamais par composants.
+Lorsque l'état devient plus riche, on le **regroupe par logique métier**, jamais par composants...
 
 **Exemples de domaines courants :**
 
@@ -82,7 +82,7 @@ Lorsque l'état devient plus riche, on le **regroupe par logique**, jamais par c
 **Bon réflexe :**
 
 1. Identifier **un domaine** (ex. Auth)
-2. Créer **un store dédié**
+2. Créer **un store dédié** : useCartStore, useAuthStore, usePostStore, ...
 3. Y mettre **l'état + les actions** associées
 4. Les composants viennent y **puiser**, sans dépendre les uns des autres
 
@@ -90,7 +90,17 @@ Lorsque l'état devient plus riche, on le **regroupe par logique**, jamais par c
 
 1. Code **prévisible**
 1. Composants **simples**
-1. Logique **relocalisable** et testable
+1. Logique **relocalisable** et testable (à voir plus tard).
+
+---
+
+## TP Ruban Machine de Turing 
+
+> *Temps : 1h*
+
+Créez un ruban centré dans la page dans un thème noir, chaque case est cliquable et une petite croix se place au centre une fois cliqué, en requliuant sur la croix elle disparait 
+
+[Machine Ruban](../TPs/03.0_marchine_ruban.md)
 
 ---
 

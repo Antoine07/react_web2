@@ -53,5 +53,30 @@ Voici deux markdowns que vous récupérez sur le dépôt.
 
 - [Zustands](https://antoine07.github.io/react_web2/13_zustand_intro_02.html)
 
-- [Zustands produce]
+- [TP Machine Ruban](../TPs/03.0_marchine_ruban.md)
 
+- [Organisation](https://antoine07.github.io/react_web2/15_zustand_organisation.html)
+
+
+
+[Avec les modèles Tailwind CSS](../TPs/models_cart/)
+
+---
+
+### Tanstack Router 
+
+- [Tanstack router](https://antoine07.github.io/react_web2/17_tanstack_router.html)
+
+---
+
+### Appronfidissement Zustand
+
+- [Immer](https://antoine07.github.io/react_web2/14_zustand_immer.html)
+
+- [TP Cart](../TPs/04_cart.md)
+
+---
+
+### Tanstack query 
+
+- [Tanstack query](https://antoine07.github.io/react_web2/16_tanstack_query.html)
