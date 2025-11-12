@@ -116,9 +116,13 @@ function Users() {
 - **useEffect** : bon pour la logique UI / effets.
 - **TanStack Query** : meilleur pour la **consommation API**.
 - Fonctionne **parfaitement en JSX**, sans TypeScript.
-```
+
+---
+### TP Pokemon
 
 
+
+---
 
 ## Merci d'avoir écouter cette première partie
 
