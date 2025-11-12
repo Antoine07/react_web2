@@ -50,22 +50,23 @@ function App() {
     setStatus(!status);
   };
 
-  const countValue = (c) => {
+  const upCountValue = (c) => {
     dispatch({ type: "SET_COUNT", count: c });
   };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-gray-100">
       <div className="space-y-8">
-        {status && (
+        {status ? (
           <Counter
-            onMount={onMount}
-            countValue={countValue}
-            active={state.active}
             memoryCounter={state.count}
+            onMount={onMount}
+            active={state.active}
+            upCountValue={upCountValue}
           />
+        ) : (
+          <CounterShow countValue={state.count} onMount={onMount} />
         )}
-        {!status && <CounterShow onMount={onMount} countValue={state.count} />}
         <LedPanel active={state.active} dismountValue={state.count} />
         <div className="flex gap-4 justify-center">
           <button

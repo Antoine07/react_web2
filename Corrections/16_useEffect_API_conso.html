@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Props – ProductCard</title>
+
+    <!-- React, ReactDOM et Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #f8f8f8;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>useEffect API fetch</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React
+
+        function User() {
+            const [data, setData] = useState([])
+            const [loading, setLoading] = useState(true)
+
+            const url_api = "https://jsonplaceholder.typicode.com/users"
+
+            useEffect(() => {
+                setLoading(true);
+                fetch(url_api)
+                    .then(res => res.json())
+                    .then(setData)
+                    .finally(() => setLoading(false));
+            }, []);
+
+            if (loading) return <p>Chargement...</p>;
+            return data.map(u => <div key={u.id}>{u.name}</div>);
+        }
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<User />);
+    </script>
+</body>
+
+</html>

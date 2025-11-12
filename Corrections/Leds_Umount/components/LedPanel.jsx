@@ -1,14 +1,11 @@
 import { useEffect } from "react";
 
-import Counter from "@/components/Counter";
-
 function LedPanel({ active }) {
   const leds = [
     { color: "red", bgClass: "bg-red-500" },
     { color: "yellow", bgClass: "bg-yellow-400" },
     { color: "green", bgClass: "bg-green-500" },
   ];
-
 
   return (
     <div className="flex flex-col gap-4 items-center">
