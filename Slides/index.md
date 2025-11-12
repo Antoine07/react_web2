@@ -49,17 +49,13 @@ Voici deux markdowns que vous récupérez sur le dépôt.
 
 ### Zustands gestion du state global
 
-- [Zustands](https://antoine07.github.io/react_web2/12_zustand_intro_01.html)
+- [Zustand introduction](https://antoine07.github.io/react_web2/12_zustand_intro_01.html)
 
-- [Zustands](https://antoine07.github.io/react_web2/13_zustand_intro_02.html)
+- [Zustand synthèse](https://antoine07.github.io/react_web2/13_zustand_intro_02.html)
 
-- [TP Machine Ruban](../TPs/03.0_marchine_ruban.md)
+- [TP Machine Ruban](https://github.com/Antoine07/react_web2/blob/main/TPs/03.0_marchine_ruban.md)
 
-- [Organisation](https://antoine07.github.io/react_web2/15_zustand_organisation.html)
-
-
-
-[Avec les modèles Tailwind CSS](../TPs/models_cart/)
+- [Organisation avec Zustand et React](https://antoine07.github.io/react_web2/15_zustand_organisation.html)
 
 ---
 
@@ -73,19 +69,10 @@ Voici deux markdowns que vous récupérez sur le dépôt.
 
 - [Immer](https://antoine07.github.io/react_web2/14_zustand_immer.html)
 
-- [TP Cart](../TPs/04_cart.md)
+- [TP Cart](https://github.com/Antoine07/react_web2/blob/main/TPs/04_cart.md)
 
 ---
 
 ### Tanstack query 
 
 - [Tanstack query](https://antoine07.github.io/react_web2/16_tanstack_query.html)
-
-
-### Architecture par composant
-
-- [readme du projet](./CleanArchitecture/apps/README.md)
-
-- [Introduction Architecture](./CleanArchitecture/Supports/Chapitre_introduction.md) 
-
-Si vous êtes déjà avancé, lancez-vous dans la conception d'une application avec des architectures clean et par composant.
