@@ -62,6 +62,7 @@ Voici deux markdowns que vous récupérez sur le dépôt.
 ### Tanstack Router 
 
 - [Tanstack router](https://antoine07.github.io/react_web2/16_tanstack_router.html)
+- [Tanstack router deuxième partie](https://antoine07.github.io/react_web2/16.2_tanstack_router.html)
 
 ---
 
@@ -75,4 +76,19 @@ Voici deux markdowns que vous récupérez sur le dépôt.
 
 ### Tanstack query 
 
-- [Tanstack query](https://antoine07.github.io/react_web2/16_tanstack_query.html)
+- [Tanstack query deuxième partie](https://antoine07.github.io/react_web2/17_tanstack_query.html)
+
+- [tp pokemon](https://github.com/Antoine07/react_web2/blob/main/TPs/05_pokemon.md)
+
+
+- [Tanstack query deuxième partie](https://antoine07.github.io/react_web2/17.2_tanstack_query.html)
+
+
+- [tp catalogue](https://github.com/Antoine07/react_web2/blob/main/TPs/06_catalogue.md)
+
+
+### SOLID TypeScript
+
+- [typescript introduction](https://github.com/Antoine07/react_web2/blob/main/TPs/18_typeScript.html)
+
+- [tp solid](https://github.com/Antoine07/react_web2/blob/main/TPs/18_typeScript.md)

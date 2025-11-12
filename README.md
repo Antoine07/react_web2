@@ -1,22 +1,3 @@
-# Programme React
-
-# Plan de cours 
-
-## Installation pour commencer
-
-1. Tous les modèles sont dans le dossier `models`
-
-1. Organisation pour votre travail
-
-* Créez un dossier COURS_REACT sur votre bureau.
-* Ouvrez ce dossier avec vscode.
-* Créez un sous dossier introduction
-* Créez un autre sous dossier Examples.
-
----
-
-## Le cours React
-
 # Plan de cours 
 
 ## Installation pour commencer
@@ -68,23 +49,20 @@ Voici deux markdowns que vous récupérez sur le dépôt.
 
 ### Zustands gestion du state global
 
-- [Zustands](https://antoine07.github.io/react_web2/12_zustand_intro_01.html)
+- [Zustand introduction](https://antoine07.github.io/react_web2/12_zustand_intro_01.html)
 
-- [Zustands](https://antoine07.github.io/react_web2/13_zustand_intro_02.html)
+- [Zustand synthèse](https://antoine07.github.io/react_web2/13_zustand_intro_02.html)
 
-- [TP Machine Ruban](../TPs/03.0_marchine_ruban.md)
+- [TP Machine Ruban](https://github.com/Antoine07/react_web2/blob/main/TPs/03.0_marchine_ruban.md)
 
-- [Organisation](https://antoine07.github.io/react_web2/15_zustand_organisation.html)
-
-- [TP Cart](../TPs/04_cart.md)
-
-[Avec les modèles Tailwind CSS](../TPs/models_cart/)
+- [Organisation avec Zustand et React](https://antoine07.github.io/react_web2/15_zustand_organisation.html)
 
 ---
 
 ### Tanstack Router 
 
-- [Tanstack query](https://antoine07.github.io/react_web2/17_tanstack_router.html)
+- [Tanstack router](https://antoine07.github.io/react_web2/16_tanstack_router.html)
+- [Tanstack router deuxième partie](https://antoine07.github.io/react_web2/16.2_tanstack_router.html)
 
 ---
 
@@ -92,17 +70,18 @@ Voici deux markdowns que vous récupérez sur le dépôt.
 
 - [Immer](https://antoine07.github.io/react_web2/14_zustand_immer.html)
 
+- [TP Cart](https://github.com/Antoine07/react_web2/blob/main/TPs/04_cart.md)
+
 ---
 
 ### Tanstack query 
 
-- [Tanstack query](https://antoine07.github.io/react_web2/16_tanstack_query.html)
+- [Tanstack query deuxième partie](https://antoine07.github.io/react_web2/17_tanstack_query.html)
+
+- [tp pokemon](https://github.com/Antoine07/react_web2/blob/main/TPs/05_pokemon.md)
 
 
-### Architecture par composant
+- [Tanstack query deuxième partie](https://antoine07.github.io/react_web2/17.2_tanstack_query.html)
 
-- [readme du projet](./TPs/CleanArchitecture/apps/README.md)
 
-- [Introduction Architecture](./TPs/CleanArchitecture/Supports/Chapitre_introduction.md) 
-
-Si vous êtes déjà avancé, lancez-vous dans la conception d'une application avec des architectures clean et par composant.
+- [tp catalogue](https://github.com/Antoine07/react_web2/blob/main/TPs/06_catalogue.md)

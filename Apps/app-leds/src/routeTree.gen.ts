@@ -9,22 +9,9 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ShopRouteImport } from './routes/shop'
-import { Route as CategoryRouteImport } from './routes/category'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as PokemonNameRouteImport } from './routes/pokemon.$name'
 
-const ShopRoute = ShopRouteImport.update({
-  id: '/shop',
-  path: '/shop',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CategoryRoute = CategoryRouteImport.update({
-  id: '/category',
-  path: '/category',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -35,66 +22,35 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PokemonNameRoute = PokemonNameRouteImport.update({
-  id: '/pokemon/$name',
-  path: '/pokemon/$name',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/category': typeof CategoryRoute
-  '/shop': typeof ShopRoute
-  '/pokemon/$name': typeof PokemonNameRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/category': typeof CategoryRoute
-  '/shop': typeof ShopRoute
-  '/pokemon/$name': typeof PokemonNameRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/category': typeof CategoryRoute
-  '/shop': typeof ShopRoute
-  '/pokemon/$name': typeof PokemonNameRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/category' | '/shop' | '/pokemon/$name'
+  fullPaths: '/' | '/about'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/category' | '/shop' | '/pokemon/$name'
-  id: '__root__' | '/' | '/about' | '/category' | '/shop' | '/pokemon/$name'
+  to: '/' | '/about'
+  id: '__root__' | '/' | '/about'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  CategoryRoute: typeof CategoryRoute
-  ShopRoute: typeof ShopRoute
-  PokemonNameRoute: typeof PokemonNameRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/shop': {
-      id: '/shop'
-      path: '/shop'
-      fullPath: '/shop'
-      preLoaderRoute: typeof ShopRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/category': {
-      id: '/category'
-      path: '/category'
-      fullPath: '/category'
-      preLoaderRoute: typeof CategoryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -109,22 +65,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/pokemon/$name': {
-      id: '/pokemon/$name'
-      path: '/pokemon/$name'
-      fullPath: '/pokemon/$name'
-      preLoaderRoute: typeof PokemonNameRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  CategoryRoute: CategoryRoute,
-  ShopRoute: ShopRoute,
-  PokemonNameRoute: PokemonNameRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

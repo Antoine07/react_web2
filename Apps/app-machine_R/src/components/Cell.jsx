@@ -1,4 +1,6 @@
+
 function Cell({ value, isHead }) {
+
   return (
     <div className="relative">
       <div
