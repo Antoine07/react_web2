@@ -97,3 +97,12 @@ Voici deux markdowns que vous récupérez sur le dépôt.
 ### Tanstack query 
 
 - [Tanstack query](https://antoine07.github.io/react_web2/16_tanstack_query.html)
+
+
+### Architecture par composant
+
+- [readme du projet](./CleanArchitecture/apps/README.md)
+
+- [Introduction Architecture](./CleanArchitecture/Supports/Chapitre_introduction.md) 
+
+Si vous êtes déjà avancé, lancez-vous dans la conception d'une application avec des architectures clean et par composant.
