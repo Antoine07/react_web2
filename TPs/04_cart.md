@@ -1,15 +1,18 @@
 # TP n°2 — Panier d'achat avec Zustand
 
-## Objectif
+## Présentation
+
+Dans un nouveau projet React.
+
+Créez un menu avec Tanstack router avec les items de menus suivants : Home, Catalogues. La page Home présente les derniers produits et la page `Catalogues` permet de commander les produits dans le paniers.
 
 Créer une mini-application React permettant de gérer un panier d'achat (add / remove / total).
 Le panier sera stocké **dans Zustand** pour être accessible depuis n'importe quel composant.
 
 Créez un thème sombre et clair qui persistera si vous avez le temps.
 
-Aidez-vous des composants donnés en exemple, vous les trouverez ici :
+Vous êtes libre pour la partie UX.
 
-[modèles](../TPs/models_cart/)
 
 ---
 
