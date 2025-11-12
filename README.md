@@ -101,8 +101,8 @@ Voici deux markdowns que vous récupérez sur le dépôt.
 
 ### Architecture par composant
 
-- [readme du projet](./CleanArchitecture/apps/README.md)
+- [readme du projet](./TPs/CleanArchitecture/apps/README.md)
 
-- [Introduction Architecture](./CleanArchitecture/Supports/Chapitre_introduction.md) 
+- [Introduction Architecture](./TPs/CleanArchitecture/Supports/Chapitre_introduction.md) 
 
 Si vous êtes déjà avancé, lancez-vous dans la conception d'une application avec des architectures clean et par composant.
