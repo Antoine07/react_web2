@@ -23,32 +23,10 @@
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="3" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="11">
-<h1 id="useeffect---un-exemple-concr%C3%A8t">useEffect - Un exemple concrèt</h1>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js">
-<span class="hljs-keyword">function</span> <span class="hljs-title function_">Users</span>(<span class="hljs-params"></span>) {
-  <span class="hljs-keyword">const</span> [data, setData] = <span class="hljs-title function_">useState</span>([])
-  <span class="hljs-keyword">const</span> [loading, setLoading] = <span class="hljs-title function_">useState</span>(<span class="hljs-literal">true</span>)
-
-<span class="hljs-keyword">const</span> url_api = <span class="hljs-string">&quot;https://jsonplaceholder.typicode.com/users&quot;</span>
-
-  <span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =&gt;</span> {
-    <span class="hljs-title function_">setLoading</span>(<span class="hljs-literal">true</span>);
-    <span class="hljs-title function_">fetch</span>(url_api)
-      .<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> res.<span class="hljs-title function_">json</span>())
-      .<span class="hljs-title function_">then</span>(setData)
-      .<span class="hljs-title function_">finally</span>(<span class="hljs-function">() =&gt;</span> <span class="hljs-title function_">setLoading</span>(<span class="hljs-literal">false</span>));
-  }, []);
-
-  <span class="hljs-keyword">if</span> (loading) <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Chargement...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>;
-  <span class="hljs-keyword">return</span> data.<span class="hljs-title function_">map</span>(<span class="hljs-function"><span class="hljs-params">u</span> =&gt;</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{u.id}</span>&gt;</span>{u.name}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>);
-}
-</code></pre>
+<h1 id="useeffect---une-m%C3%A9thode-pour-r%C3%A9cup%C3%A9rer-des-pokemons">useEffect - une méthode pour récupérer des pokemons.</h1>
+<p>En utilisant un useEffect afficher un <code>pokemon</code> dans votre rendu. Faites un nouveau projet simple sans router, appelez ce projet <code>pokemon</code>.</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="4" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="11">
-<h3 id="remarque-si-vous-voulez-un-exemple">Remarque si vous voulez un exemple</h3>
-<p><a href="../Corrections/16_useEffect_API_conso.html">exemple avec useEffect</a></p>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="5" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="11">
 <h1 id="limites-de-cette-approche">Limites de cette approche</h1>
 <ul>
 <li>Beaucoup de code pour quelque chose de fréquent</li>
@@ -57,7 +35,7 @@
 <li>Pas de re-fetch intelligent (focus, intervalle, mutation)</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="6" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="11">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="5" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="11">
 <h1 id="introduction-tanstack-query">Introduction TanStack Query</h1>
 <p>TanStack Query ne remplace pas Zustand ou Redux.<br />
 Il gère <strong>uniquement les données venant d'une API</strong>.</p>
@@ -68,22 +46,50 @@ Il gère <strong>uniquement les données venant d'une API</strong>.</p>
 <li>Fournit loading / error intégrés</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="7" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="11">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="6" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="11">
 <h1 id="exemple-avec-usequery">Exemple avec <code>useQuery</code></h1>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-keyword">import</span> { useQuery } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@tanstack/react-query&quot;</span>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-keyword">import</span> {
+  <span class="hljs-title class_">QueryClient</span>,
+  <span class="hljs-title class_">QueryClientProvider</span>,
+  useQuery,
+} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@tanstack/react-query&#x27;</span>
 
-<span class="hljs-keyword">const</span> url_api = <span class="hljs-string">&quot;https://jsonplaceholder.typicode.com/users&quot;</span>
+<span class="hljs-keyword">const</span> queryClient = <span class="hljs-keyword">new</span> <span class="hljs-title class_">QueryClient</span>()
 
-<span class="hljs-keyword">function</span> <span class="hljs-title function_">Users</span>(<span class="hljs-params"></span>) {
-  <span class="hljs-keyword">const</span> { data, isLoading, isError } = <span class="hljs-title function_">useQuery</span>({
-    <span class="hljs-attr">queryKey</span>: [<span class="hljs-string">&quot;users&quot;</span>],
-    <span class="hljs-attr">queryFn</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-title function_">fetch</span>(url_api).<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">r</span> =&gt;</span> r.<span class="hljs-title function_">json</span>())
-  });
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">App</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">return</span> (
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">QueryClientProvider</span> <span class="hljs-attr">client</span>=<span class="hljs-string">{queryClient}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Example</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">QueryClientProvider</span>&gt;</span></span>
+  )
+}
 
-  <span class="hljs-keyword">if</span> (isLoading) <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Chargement...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>;
-  <span class="hljs-keyword">if</span> (isError) <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Erreur<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>;
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="7" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="11">
+<h2 id="d%C3%A9finir-le-provider-pour-faire-la-requ%C3%AAte">Définir le provider pour faire la requête</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">Example</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">const</span> { isPending, error, data } = <span class="hljs-title function_">useQuery</span>({
+    <span class="hljs-attr">queryKey</span>: [<span class="hljs-string">&#x27;repoData&#x27;</span>],
+    <span class="hljs-attr">queryFn</span>: <span class="hljs-function">() =&gt;</span>
+      <span class="hljs-title function_">fetch</span>(<span class="hljs-string">&#x27;https://api.github.com/repos/TanStack/query&#x27;</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span>
+        res.<span class="hljs-title function_">json</span>(),
+      ),
+  })
 
-  <span class="hljs-keyword">return</span> data.<span class="hljs-title function_">map</span>(<span class="hljs-function"><span class="hljs-params">u</span> =&gt;</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{u.id}</span>&gt;</span>{u.name}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>);
+  <span class="hljs-keyword">if</span> (isPending) <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;Loading...&#x27;</span>
+
+  <span class="hljs-keyword">if</span> (error) <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;An error has occurred: &#x27;</span> + error.<span class="hljs-property">message</span>
+
+  <span class="hljs-keyword">return</span> (
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>{data.name}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{data.description}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span><img class="emoji" draggable="false" alt="👀" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f440.svg" data-marp-twemoji=""/> {data.subscribers_count}<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>{&#x27; &#x27;}
+      <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span><img class="emoji" draggable="false" alt="✨" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2728.svg" data-marp-twemoji=""/> {data.stargazers_count}<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>{&#x27; &#x27;}
+      <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span><img class="emoji" draggable="false" alt="🍴" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f374.svg" data-marp-twemoji=""/> {data.forks_count}<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  )
 }
 </code></pre>
 </section>
