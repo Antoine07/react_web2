@@ -90,8 +90,7 @@ function ProductDetail() {
 
 ```
 
-
-Vous partirez de ces données enrichies et afficherez les produits par catégorie : boissons, gâteaux et pâtisseries, en créant des routes paramètriques.
+Vous partirez de ces données enrichies et afficherez les produits par catégorie : boissons, gâteaux et pâtisseries, en créant des routes paramètriques. Créez des liens pour afficher le détails de ces produits.
 
 ```js
 products: [
