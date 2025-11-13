@@ -81,7 +81,7 @@ Voici deux markdowns que vous récupérez sur le dépôt.
 
 ### Tanstack query 
 
-- [Tanstack query deuxième partie](https://antoine07.github.io/react_web2/17_tanstack_query.html)
+- [Tanstack query introduction](https://antoine07.github.io/react_web2/17_tanstack_query.html)
 
 - [tp pokemon](https://github.com/Antoine07/react_web2/blob/main/TPs/05_pokemon.md)
 

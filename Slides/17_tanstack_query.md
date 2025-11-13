@@ -29,8 +29,6 @@ En utilisant un useEffect afficher un `pokemon` dans votre rendu. Faites un nouv
 
 ---
 
----
-
 # Limites de cette approche
 
 - Beaucoup de code pour quelque chose de fréquent
@@ -55,20 +53,51 @@ Il gère **uniquement les données venant d'une API**.
 # Exemple avec `useQuery` 
 
 ```js
-import { useQuery } from "@tanstack/react-query"
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from '@tanstack/react-query'
 
-const url_api = "https://jsonplaceholder.typicode.com/users"
+const queryClient = new QueryClient()
 
-function Users() {
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["users"],
-    queryFn: () => fetch(url_api).then(r => r.json())
-  });
+export default function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Example />
+    </QueryClientProvider>
+  )
+}
 
-  if (isLoading) return <p>Chargement...</p>;
-  if (isError) return <p>Erreur</p>;
+```
 
-  return data.map(u => <div key={u.id}>{u.name}</div>);
+---
+
+## Définir le provider pour faire la requête
+
+```js
+function Example() {
+  const { isPending, error, data } = useQuery({
+    queryKey: ['repoData'],
+    queryFn: () =>
+      fetch('https://api.github.com/repos/TanStack/query').then((res) =>
+        res.json(),
+      ),
+  })
+
+  if (isPending) return 'Loading...'
+
+  if (error) return 'An error has occurred: ' + error.message
+
+  return (
+    <div>
+      <h1>{data.name}</h1>
+      <p>{data.description}</p>
+      <strong>👀 {data.subscribers_count}</strong>{' '}
+      <strong>✨ {data.stargazers_count}</strong>{' '}
+      <strong>🍴 {data.forks_count}</strong>
+    </div>
+  )
 }
 ```
 
