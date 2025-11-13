@@ -2,10 +2,6 @@
 
 ## Installation pour commencer
 
-1. Récupérez le modèle simple pour commencer
-
-[model simple](../models/index_simple.html)
-
 1. Organisation pour votre travail
 
 * Créez un dossier COURS_REACT sur votre bureau.
@@ -36,14 +32,16 @@ Dans nos projets actuels on utilise `vite`
 
 ### Pratiques TPs
 
-Voici deux markdowns que vous récupérez sur le dépôt.
+Voici deux Tps que vous récupérez sur le dépôt.
 
 - [Leds useReducer](https://github.com/Antoine07/react_web2/blob/main/TPs/01_leds_useffect.md)
 - [Leds useEffect & useReducer](https://github.com/Antoine07/react_web2/blob/main/TPs/02_leds_useffect.md)
 
 ---
 
-### Installer nvm
+### Installer nvm 
+
+nvm permet de gérer plusieurs versions de Node.js sur votre machine.
 
 [installation nvm](../docs/000_install.html)
 
@@ -55,12 +53,12 @@ Voici deux markdowns que vous récupérez sur le dépôt.
 
 - [TP Machine Ruban](https://github.com/Antoine07/react_web2/blob/main/TPs/03.0_marchine_ruban.md)
 
-- [Organisation avec Zustand et React](https://antoine07.github.io/react_web2/15_zustand_organisation.html)
+- [Architecture avec Zustand et React](https://antoine07.github.io/react_web2/15_zustand_organisation.html)
 
 ---
 ### useMemo
 
-- [Tanstack router](https://antoine07.github.io/react_web2/19_useMemo.html)
+- [Hook useMemo](https://antoine07.github.io/react_web2/19_useMemo.html)
 
 ---
 
@@ -83,14 +81,22 @@ Voici deux markdowns que vous récupérez sur le dépôt.
 
 - [Tanstack query introduction](https://antoine07.github.io/react_web2/17_tanstack_query.html)
 
+(ne réviser pas cette partie)
+
+- [Tanstack query appronfondissement](https://antoine07.github.io/react_web2/17.2_tanstack_query.html)
+
 - [tp pokemon](https://github.com/Antoine07/react_web2/blob/main/TPs/05_pokemon.md)
 
 ---
 
+## Un gros projet 
+
 - [tp catalogue](https://github.com/Antoine07/react_web2/blob/main/TPs/06_catalogue.md)
 
 
-### SOLID TypeScript
+### SOLID TypeScript 
+
+(à ne pas réviser)
 
 - [typescript introduction](https://github.com/Antoine07/react_web2/blob/main/TPs/18_typeScript.html)
 
