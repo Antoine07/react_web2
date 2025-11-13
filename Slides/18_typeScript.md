@@ -103,7 +103,7 @@ Créer trois variables :
 
 Affichez une phrase :
 
-> “Le joueur [nom] est niveau [level]. Champion : [isChampion].”
+> "Le joueur [nom] est niveau [level]. Champion : [isChampion]."
 
 *Essayez de modifier un type et observez l'erreur.*
 
@@ -337,3 +337,12 @@ Créer un mini programme qui :
 ---
 
 [tp solid](https://github.com/Antoine07/react_web2/blob/main/TPs/07_srp_cart.md)
+
+
+---
+
+## Merci d'avoir écouter cette première partie
+
+Pour revenir à la page d'accueil
+
+[Plan du cours](https://antoine07.github.io/react_web2/#2)

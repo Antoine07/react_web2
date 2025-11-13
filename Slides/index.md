@@ -58,6 +58,11 @@ Voici deux markdowns que vous récupérez sur le dépôt.
 - [Organisation avec Zustand et React](https://antoine07.github.io/react_web2/15_zustand_organisation.html)
 
 ---
+### useMemo
+
+- [Tanstack router](https://antoine07.github.io/react_web2/19_useMemo.html)
+
+---
 
 ### Tanstack Router 
 
