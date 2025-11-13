@@ -51,7 +51,7 @@ add("3", 5)
 ## 2. Installation et configuration
 
 ```bash
-npm init 
+npm init -y
 npm install typescript --save-dev
 npx tsc --init
 ```
