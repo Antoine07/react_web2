@@ -2,6 +2,7 @@ import Cell from "@/components/Cell";
 import { useMachineStore } from "./stores/useMachineStore";
 
 import B from "@/components/B"
+import A from "@/components/A"
 
 function App() {
   const { tape, mode, halted, head, reset, step } = useMachineStore((s) => s);
@@ -69,6 +70,7 @@ function App() {
             </div>
           </div>
             <B />
+            <A />
         </section>
       </main>
     </>

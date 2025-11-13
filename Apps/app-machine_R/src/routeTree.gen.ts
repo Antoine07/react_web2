@@ -13,6 +13,7 @@ import { Route as ShopRouteImport } from './routes/shop'
 import { Route as CategoryRouteImport } from './routes/category'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PostIdRouteImport } from './routes/post.$id'
 import { Route as PokemonNameRouteImport } from './routes/pokemon.$name'
 
 const ShopRoute = ShopRouteImport.update({
@@ -35,6 +36,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PostIdRoute = PostIdRouteImport.update({
+  id: '/post/$id',
+  path: '/post/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PokemonNameRoute = PokemonNameRouteImport.update({
   id: '/pokemon/$name',
   path: '/pokemon/$name',
@@ -47,6 +53,7 @@ export interface FileRoutesByFullPath {
   '/category': typeof CategoryRoute
   '/shop': typeof ShopRoute
   '/pokemon/$name': typeof PokemonNameRoute
+  '/post/$id': typeof PostIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByTo {
   '/category': typeof CategoryRoute
   '/shop': typeof ShopRoute
   '/pokemon/$name': typeof PokemonNameRoute
+  '/post/$id': typeof PostIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,13 +70,27 @@ export interface FileRoutesById {
   '/category': typeof CategoryRoute
   '/shop': typeof ShopRoute
   '/pokemon/$name': typeof PokemonNameRoute
+  '/post/$id': typeof PostIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/category' | '/shop' | '/pokemon/$name'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/category'
+    | '/shop'
+    | '/pokemon/$name'
+    | '/post/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/category' | '/shop' | '/pokemon/$name'
-  id: '__root__' | '/' | '/about' | '/category' | '/shop' | '/pokemon/$name'
+  to: '/' | '/about' | '/category' | '/shop' | '/pokemon/$name' | '/post/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/category'
+    | '/shop'
+    | '/pokemon/$name'
+    | '/post/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -77,6 +99,7 @@ export interface RootRouteChildren {
   CategoryRoute: typeof CategoryRoute
   ShopRoute: typeof ShopRoute
   PokemonNameRoute: typeof PokemonNameRoute
+  PostIdRoute: typeof PostIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -109,6 +132,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/post/$id': {
+      id: '/post/$id'
+      path: '/post/$id'
+      fullPath: '/post/$id'
+      preLoaderRoute: typeof PostIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pokemon/$name': {
       id: '/pokemon/$name'
       path: '/pokemon/$name'
@@ -125,6 +155,7 @@ const rootRouteChildren: RootRouteChildren = {
   CategoryRoute: CategoryRoute,
   ShopRoute: ShopRoute,
   PokemonNameRoute: PokemonNameRoute,
+  PostIdRoute: PostIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
