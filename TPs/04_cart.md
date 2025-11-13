@@ -75,6 +75,8 @@ Vous devez créer **deux composants** :
 
 ### 3) Page catégorie des Produit - route paramètrique
 
+*Si vous le souhaitez vous pouver repartir sur un nouveau projet*
+
 ```js
 // Fichier : routes/catalogue.$name.jsx
 import { useParams } from "@tanstack/react-router"
@@ -89,6 +91,19 @@ function ProductDetail() {
 }
 
 ```
+
+Si vous devez récupérez les paramètres d'une route dans un composant écrivez votre paramètre comme suit 
+
+```js
+ const params = useParams({ from: '/catalogue/$name' }) // ici vous récupérez le nom de votre route 
+
+// une autre syntaxe
+ const postId = useParams({
+    from: '/catalogue/$name',
+    select: (params) => params.postId,
+})
+
+ ```
 
 Vous partirez de ces données enrichies et afficherez les produits par catégorie : boissons, gâteaux et pâtisseries, en créant des routes paramètriques. Créez des liens pour afficher le détails de ces produits.
 
