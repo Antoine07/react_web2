@@ -23,35 +23,11 @@ class: lead
 
 ---
 
-# useEffect - Un exemple concrèt
+# useEffect - une méthode pour récupérer des pokemons.
 
-
-```js
-
-function Users() {
-  const [data, setData] = useState([])
-  const [loading, setLoading] = useState(true)
-
-const url_api = "https://jsonplaceholder.typicode.com/users"
-
-  useEffect(() => {
-    setLoading(true);
-    fetch(url_api)
-      .then(res => res.json())
-      .then(setData)
-      .finally(() => setLoading(false));
-  }, []);
-
-  if (loading) return <p>Chargement...</p>;
-  return data.map(u => <div key={u.id}>{u.name}</div>);
-}
-```
+En utilisant un useEffect afficher un `pokemon` dans votre rendu. Faites un nouveau projet simple sans router, appelez ce projet `pokemon`.
 
 ---
-
-### Remarque si vous voulez un exemple
-
-[exemple avec useEffect](../Corrections/16_useEffect_API_conso.html)
 
 ---
 
