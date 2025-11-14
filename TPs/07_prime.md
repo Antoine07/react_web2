@@ -83,8 +83,8 @@ Cependant on vous propose ici une arborescence professionelle
 │   ├── Prime.jsx
 │   └── ui
 │       └── Button.jsx
-├── hooks
-│   └── usePrimeAlea.jsx
+├── hooks               <--- facultatif si vous décidez de créer votre dossier `api` dans le projet, d'autres hooks peuvent être là
+│   └── usePrimeAlea.jsx 
 ├── index.css
 ├── main.jsx
 ├── pages
