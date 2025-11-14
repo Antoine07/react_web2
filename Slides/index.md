@@ -101,6 +101,7 @@ nvm permet de gérer plusieurs versions de Node.js sur votre machine.
 
 Aidez-vous des supports de cours dans le dossiers `TPs/notions`, j'y ajouterai des compléments de cours durant la semaine.
 
+---
 
 ### SOLID TypeScript 
 
