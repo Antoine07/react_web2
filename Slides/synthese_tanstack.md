@@ -12,11 +12,14 @@ Ce code montre comment utiliser **TanStack Query** pour :
 1. Exécuter une requête HTTP (`fetch`)
 2. Gérer automatiquement :
 
-   * l'état de chargement
-   * les erreurs
-   * la mise en cache
-   * la synchronisation de la donnée
+l'état de chargement
+les erreurs
+la mise en cache
+la synchronisation de la donnée
+
 3. Afficher le résultat dans un composant React
+
+---
 
 C'est ce que TanStack Query fait de mieux.
 
@@ -32,9 +35,9 @@ const queryClient = new QueryClient()
 
 Le **QueryClient** est le cœur du système :
 
-* C'est lui qui gère le cache des données ! 
-* C'est lui qui sait quand relancer des requêtes
-* Il centralise la configuration générale
+C'est lui qui gère le cache des données ! 
+C'est lui qui sait quand relancer des requêtes
+Il centralise la configuration générale
 
 ---
 
@@ -145,10 +148,10 @@ return (
 
 React Query gère :
 
-* la mise en cache
-* la synchronisation
-* le rechargement automatique en arrière-plan
-* l'invalidation du cache
+la mise en cache
+la synchronisation
+le rechargement automatique en arrière-plan
+l'invalidation du cache
 
 Sans aucune configuration.
 
@@ -177,10 +180,10 @@ Cela évite d'écrire 50 lignes de code à chaque fois.
 2. On le fournit à l'application
 3. `useQuery` :
 
-   * lance la requête
-   * gère les états
-   * met en cache la réponse
-   * renvoie les données prêtes à l'usage
+lance la requête
+gère les états
+met en cache la réponse
+renvoie les données prêtes à l'usage
 
 C'est la façon moderne et propre de gérer les données asynchrones dans React.
 
