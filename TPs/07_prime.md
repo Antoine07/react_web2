@@ -50,7 +50,7 @@ Vous devez intégrer et utiliser ce code dans l'emplacement adéquat de votre pr
 ```js
 import { z } from "zod";
 
-const limitSchema = z.object({
+const numberSchema = z.object({
   number: z.number().min(1).max(50),
 });
 
