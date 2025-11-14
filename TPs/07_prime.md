@@ -96,6 +96,8 @@ Cependant on vous propose ici une arborescence professionelle
 │   └── primes.jsx
 ├── schemas
 │   └── numberSchema.jsx
+├── service
+│   └── verifIsPrime.jsx
 └── stores
     └── usePrimeStore.js
 ```
@@ -132,7 +134,7 @@ Sans logique réseau, sans appel React Query.
 
 ---
 
-# **4. Hook TanStack Query dédié**
+# **4. Hook TanStack Query dédié** (optionnel)
 
 Créez un hook de consultation de votre API simulée pour isoler toute la logique asynchrone.
 
