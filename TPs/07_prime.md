@@ -1,6 +1,6 @@
 # **TP — Générateur de nombres premiers optimisé**
 
-Travail à réaliser **en binôme** et à rendre avant **le 24/11/2025 à 00h00** (ou en fin de journée selon votre organisation).
+Travail à réaliser **en binôme** et à rendre avant **le 24/11/2025 à 00h00**.
 
 Vous devez mobiliser les notions abordées en cours, mais également faire des recherches personnelles. L'objectif est de produire une application complète et cohérente, avec une organisation professionnelle.
 
