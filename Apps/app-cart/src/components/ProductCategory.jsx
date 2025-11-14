@@ -1,13 +1,18 @@
-import React from "react";
-import useCartStore from "../store/useCartStore.js";
-import { Link } from '@tanstack/react-router';
+import { useEffect, useMemo } from "react";
+import useCartStore from "../store/useCartStore.js"
+import { useParams } from "@tanstack/react-router"
 
-export default function ProductList() {
-	const { products, buy } = useCartStore((s) => s);
+export default function ProductCategory() {
+	const {getProductsByCategory, productsByCategory }  = useCartStore((s) => s);
+	const params = useParams({ from: '/catalogue/$name' })
+	
+	useEffect(()=>{
+		 getProductsByCategory(params?.name) 
+	}, [])
 
 	return (
 		<ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-			{products.map((p) => (
+			{productsByCategory.map((p) => (
 				<li
 					key={p.id}
 					className="group rounded-lg border border-neutral-800 bg-neutral-900/40 p-4 shadow-sm transition hover:border-neutral-700 hover:bg-neutral-900"
@@ -15,9 +20,6 @@ export default function ProductList() {
 					<div className="flex items-start justify-between gap-3">
 						<div>
 							<div className="text-sm font-medium text-neutral-100">{p.name}</div>
-							<div className="text-sm font-medium text-neutral-100">
-								<Link to={`/catalogue/${p?.category}`} >{p?.category}</Link>
-								</div>
 							<div className="text-xs text-neutral-400">{p.price.toFixed(2)} €</div>
 						</div>
 					</div>

@@ -81,7 +81,7 @@ nvm permet de gérer plusieurs versions de Node.js sur votre machine.
 
 - [Tanstack query introduction](https://antoine07.github.io/react_web2/17_tanstack_query.html)
 
-(ne réviser pas cette partie)
+(à ne pas réviser)
 
 - [Tanstack query appronfondissement](https://antoine07.github.io/react_web2/17.2_tanstack_query.html)
 
@@ -89,9 +89,17 @@ nvm permet de gérer plusieurs versions de Node.js sur votre machine.
 
 ---
 
-## Un gros projet 
+### Ce qu'il faut maîtriser pour le cours pour Tanstack Query
 
-- [tp catalogue](https://github.com/Antoine07/react_web2/blob/main/TPs/06_catalogue.md)
+- [Tanstack query](https://antoine07.github.io/react_web2/synthese_tanstack.html)
+
+--- 
+
+## Le projet noté sur les nombres premiers
+
+- [tp Prime](https://github.com/Antoine07/react_web2/blob/main/TPs/07_prime.md)
+
+Aidez-vous des supports de cours dans le dossiers `TPs/notions`, j'y ajouterai des compléments de cours durant la semaine.
 
 
 ### SOLID TypeScript 

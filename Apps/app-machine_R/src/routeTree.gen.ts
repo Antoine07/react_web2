@@ -15,6 +15,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PostIdRouteImport } from './routes/post.$id'
 import { Route as PokemonNameRouteImport } from './routes/pokemon.$name'
+import { Route as PokeNameRouteImport } from './routes/poke.$name'
 
 const ShopRoute = ShopRouteImport.update({
   id: '/shop',
@@ -46,12 +47,18 @@ const PokemonNameRoute = PokemonNameRouteImport.update({
   path: '/pokemon/$name',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PokeNameRoute = PokeNameRouteImport.update({
+  id: '/poke/$name',
+  path: '/poke/$name',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/category': typeof CategoryRoute
   '/shop': typeof ShopRoute
+  '/poke/$name': typeof PokeNameRoute
   '/pokemon/$name': typeof PokemonNameRoute
   '/post/$id': typeof PostIdRoute
 }
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/category': typeof CategoryRoute
   '/shop': typeof ShopRoute
+  '/poke/$name': typeof PokeNameRoute
   '/pokemon/$name': typeof PokemonNameRoute
   '/post/$id': typeof PostIdRoute
 }
@@ -69,6 +77,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/category': typeof CategoryRoute
   '/shop': typeof ShopRoute
+  '/poke/$name': typeof PokeNameRoute
   '/pokemon/$name': typeof PokemonNameRoute
   '/post/$id': typeof PostIdRoute
 }
@@ -79,16 +88,25 @@ export interface FileRouteTypes {
     | '/about'
     | '/category'
     | '/shop'
+    | '/poke/$name'
     | '/pokemon/$name'
     | '/post/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/category' | '/shop' | '/pokemon/$name' | '/post/$id'
+  to:
+    | '/'
+    | '/about'
+    | '/category'
+    | '/shop'
+    | '/poke/$name'
+    | '/pokemon/$name'
+    | '/post/$id'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/category'
     | '/shop'
+    | '/poke/$name'
     | '/pokemon/$name'
     | '/post/$id'
   fileRoutesById: FileRoutesById
@@ -98,6 +116,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   CategoryRoute: typeof CategoryRoute
   ShopRoute: typeof ShopRoute
+  PokeNameRoute: typeof PokeNameRoute
   PokemonNameRoute: typeof PokemonNameRoute
   PostIdRoute: typeof PostIdRoute
 }
@@ -146,6 +165,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PokemonNameRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/poke/$name': {
+      id: '/poke/$name'
+      path: '/poke/$name'
+      fullPath: '/poke/$name'
+      preLoaderRoute: typeof PokeNameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -154,6 +180,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   CategoryRoute: CategoryRoute,
   ShopRoute: ShopRoute,
+  PokeNameRoute: PokeNameRoute,
   PokemonNameRoute: PokemonNameRoute,
   PostIdRoute: PostIdRoute,
 }

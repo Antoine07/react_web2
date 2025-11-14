@@ -15,29 +15,7 @@ const RootLayout = () => (
         Category
       </Link>
       <Link to="/pokemon/pikachu" className="[&.active]:font-bold">
-        Pokemon supprise
-      </Link>
-      <Link
-        to="/shop"
-        search={{
-          page: 2,
-          sortBy: "name",
-          desc: true,
-          categories: ["electronics", "gifts"],
-        }}
-      >
-        Voir les produits triés
-      </Link>
-      <Link
-        to="/shop"
-        search={{
-          page: "deux", // ❌ string invalide
-          sortBy: "name",
-          desc: true,
-          categories: ["electronics"],
-        }}
-      >
-        Produits
+        Pokemon supprise 2
       </Link>
     </div>
     <hr />

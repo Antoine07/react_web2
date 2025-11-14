@@ -61,11 +61,6 @@ const filtered = useMemo(() => {
 }, [search])
 ```
 
----
-
-🔍 **À tester** :
-Tapez dans l'input → remarquez que la version sans `useMemo` lag plus quand la liste est très longue.
-
 
 ---
 
