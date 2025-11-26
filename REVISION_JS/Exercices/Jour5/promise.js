@@ -1,28 +1,44 @@
+
+// const timeout = setTimeout(() => {
+//     console.log("settimeout")
+// }, 1000)
+
+// console.log('start')
+
+// Promesse 
+
 function wait(ms) {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve("Terminé après " + ms + " ms");
-        }, ms);
-    });
+    return new Promise((resolve, reject) => {
+        if (false) {
+            reject("error")
+        } else {
+            setTimeout(() => {
+                resolve(`Un petit message ${ms} `)
+            }, ms)
+        }
+    })
 }
 
-wait(1000)
-    .then((msg) => {
-        console.log(msg);
+// console.log(wait(500))
+// // try catch
+// wait(500).then(res => {
+//     console.log(res)
+//     return 100001
+// }).catch(error => {
+//     console.log(error)
+// })
 
-        return 1001
-    }).then(console.log)
+// async await 
 
-
-async function test() {
-    const msg = await wait(1000);
-    console.log(msg);
+async function test(){
+    const a = await wait(500)
+    console.log(a)
+    console.log("UN")
+    const b = await wait(500)
+    console.log(b)
+    console.log("DEUX")
 }
 
-test();
 
-const timeOut = setTimeout(() => {
-    console.log("settimeout")
-}, 1000)
-
-console.log("ici")
+test()
+console.log("ici je peux m'exécuter")

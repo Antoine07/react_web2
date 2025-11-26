@@ -3,7 +3,7 @@ import useCartStore from "../store/useCartStore.js"
 import { useParams } from "@tanstack/react-router"
 
 export default function ProductCategory() {
-	const {getProductsByCategory, productsByCategory }  = useCartStore((s) => s);
+	const {getProductsByCategory, productsByCategory, buy }  = useCartStore((s) => s);
 	const params = useParams({ from: '/catalogue/$name' })
 	
 	useEffect(()=>{

@@ -9,12 +9,19 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as PrimesRouteImport } from './routes/primes'
+import { Route as PrimeRouteImport } from './routes/prime'
+import { Route as FibonacciRouteImport } from './routes/fibonacci'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutState_primeRouteImport } from './routes/about/state_prime'
 
-const PrimesRoute = PrimesRouteImport.update({
-  id: '/primes',
-  path: '/primes',
+const PrimeRoute = PrimeRouteImport.update({
+  id: '/prime',
+  path: '/prime',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FibonacciRoute = FibonacciRouteImport.update({
+  id: '/fibonacci',
+  path: '/fibonacci',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -22,40 +29,60 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutState_primeRoute = AboutState_primeRouteImport.update({
+  id: '/about/state_prime',
+  path: '/about/state_prime',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/primes': typeof PrimesRoute
+  '/fibonacci': typeof FibonacciRoute
+  '/prime': typeof PrimeRoute
+  '/about/state_prime': typeof AboutState_primeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/primes': typeof PrimesRoute
+  '/fibonacci': typeof FibonacciRoute
+  '/prime': typeof PrimeRoute
+  '/about/state_prime': typeof AboutState_primeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/primes': typeof PrimesRoute
+  '/fibonacci': typeof FibonacciRoute
+  '/prime': typeof PrimeRoute
+  '/about/state_prime': typeof AboutState_primeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/primes'
+  fullPaths: '/' | '/fibonacci' | '/prime' | '/about/state_prime'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/primes'
-  id: '__root__' | '/' | '/primes'
+  to: '/' | '/fibonacci' | '/prime' | '/about/state_prime'
+  id: '__root__' | '/' | '/fibonacci' | '/prime' | '/about/state_prime'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  PrimesRoute: typeof PrimesRoute
+  FibonacciRoute: typeof FibonacciRoute
+  PrimeRoute: typeof PrimeRoute
+  AboutState_primeRoute: typeof AboutState_primeRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/primes': {
-      id: '/primes'
-      path: '/primes'
-      fullPath: '/primes'
-      preLoaderRoute: typeof PrimesRouteImport
+    '/prime': {
+      id: '/prime'
+      path: '/prime'
+      fullPath: '/prime'
+      preLoaderRoute: typeof PrimeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fibonacci': {
+      id: '/fibonacci'
+      path: '/fibonacci'
+      fullPath: '/fibonacci'
+      preLoaderRoute: typeof FibonacciRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -65,12 +92,21 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about/state_prime': {
+      id: '/about/state_prime'
+      path: '/about/state_prime'
+      fullPath: '/about/state_prime'
+      preLoaderRoute: typeof AboutState_primeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  PrimesRoute: PrimesRoute,
+  FibonacciRoute: FibonacciRoute,
+  PrimeRoute: PrimeRoute,
+  AboutState_primeRoute: AboutState_primeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
